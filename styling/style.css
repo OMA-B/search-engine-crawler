@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+/* ------------------ Reset ----------- */
+body, body * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Comfortaa', sans-serif;
+    outline: none;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, blue, darkblue, purple);
+}
+
+/* --------- LogIn Section / Sign Up section / Search Crawling Input Section -------- */
+.user_input_container, .crawling_input_container {
+    width: 90%;
+    max-width: 450px;
+    background: whitesmoke;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 5px 30px 5px rgb(51, 49, 49);
+}
+
+.title {
+    text-align: center;
+    background-color: rgb(92, 137, 233);
+    padding: 12px;
+    font-size: 25px;
+}
+
+.log_in form, .sign_up form, .crawling_input_container form { padding: 10px; }
+
+.log_in form input, .sign_up form input, .crawling_input_container form input, .crawling_input_container form select {
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 7px;
+    border: 1px solid rgb(92, 137, 233);
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+/* .log_in form input:focus { outline-color: non;} */
+
+#button {
+    background-color: rgb(92, 137, 233);
+    cursor: pointer;
+    font-size: 20px;
+}
+#button:hover, #button:active { filter: brightness(85%); }
+
+.status_message {
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    color: blue;
+    margin: -5px 0px 10px;
+}
+
+.register_option, .login_option {
+    width: calc(100% - 20px);
+    margin: 0px auto 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.register_option *, .login_option *, .crawling_input_container form label {
+    font-size: 13px;
+    font-weight: bold;
+    color: #141414;
+}
+
+.register_option button, .login_option button {
+    border: none;
+    background-color: transparent;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.register_option button:hover, .register_option button:active, .login_option button:hover, .login_option button:active { color: blue; }
