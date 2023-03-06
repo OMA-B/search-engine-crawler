@@ -28,14 +28,14 @@ const save_user_data = async () => {
         password: signup_form.password.value,
     };
 
-    // console.log(JSON.stringify(user_data));
-    const response = await fetch('http://127.0.0.1:5500/signup', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(user_data),
-    });
-    const data = await response.JSON();
-    console.log(data);
+    console.log(JSON.stringify(user_data));
+    // const response = await fetch('http://127.0.0.1:5500/signup', {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify(user_data),
+    // });
+    // const data = await response.JSON();
+    // console.log(data);
 }
 
 // processing form data
