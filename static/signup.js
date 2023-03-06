@@ -21,14 +21,21 @@ const check_validity = () => {
 setInterval(() => { check_validity() }, 1000);
 
 // collecting user's data
-const save_user_data = () => {
+const save_user_data = async () => {
     const user_data = {
         username: signup_form.username.value,
         email: signup_form.email.value,
         password: signup_form.password.value,
-    }
+    };
 
-    console.log(JSON.stringify(user_data));
+    // console.log(JSON.stringify(user_data));
+    const response = await fetch('http://127.0.0.1:5500/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(user_data),
+    });
+    const data = await response.JSON();
+    console.log(data);
 }
 
 // processing form data
@@ -40,7 +47,7 @@ const process_form_data = (e) => {
     save_user_data();
 
     // clear inputs
-    signup_form.reset()
+    signup_form.reset();
 }
 
 // go to sign up page if user is new
