@@ -1,14 +1,14 @@
-#from flask_login import login_user, logout_user, login_required, current_user,LoginManager
-from flask import Flask, request, jsonify,render_template,\
-	redirect, url_for,send_from_directory, session
+from flask import Flask, request, jsonify,render_template,send_from_directory
+from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import inspect
 
 
 app = Flask('Search Engine Crawler')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+CORS(app)
 db = SQLAlchemy(app)
-#login_manager = LoginManager(app)
+
 
 class User(db.Model):
 	id = db.Column(db.Integer,primary_key=True)
@@ -48,6 +48,12 @@ def create_user():
 	return jsonify(info), 200
 
 
+@app.route('/login', methods=['OPTIONS'])
+def handle_options():
+	response = app.make_default_options_response()
+	response.headers['Access-Control-Allow-Methods'] = 'POST, GET'
+	return response
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -56,21 +62,24 @@ def login():
 		email = auth_info['email']
 		password = auth_info['password']
 		user = User.query.filter_by(email=email,password=password).first()
-
+		user_dict= {'username':user.username,'email':user.email,'admin':user.admin}
 		if user and authenticate(email,password):
-			#login_user(user)
-			return redirect(url_for('index'))
+			return jsonify(user_dict)
 		else:
 			return jsonify({'message':'Invalid email or password.'})
 
-	return render_template('login.html')
+	return jsonify({'message':'Create User account first'})
 
+
+#Password auth
 def authenticate(email,password):
 	user = User.query.filter_by(email=email,password=password).first()
 	if user:
 		return bool(user.email==email and user.password==password)
 	return False
 
+
+#Home ROute
 @app.route('/',methods=['GET','POST'])
 def index():
 	return render_template('index.html')
