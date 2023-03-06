@@ -57,13 +57,15 @@ def handle_options():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+	if not inspect(db.engine).has_table('user'):
+		db.create_all()
 	if request.method == 'POST':
 		auth_info = request.get_json()
 		email = auth_info['email']
 		password = auth_info['password']
 		user = User.query.filter_by(email=email,password=password).first()
-		user_dict= {'username':user.username,'email':user.email,'admin':user.admin}
 		if user and authenticate(email,password):
+			user_dict= {'username':user.username,'email':user.email,'admin':user.admin}
 			return jsonify(user_dict)
 		else:
 			return jsonify({'message':'Invalid email or password.'})
@@ -84,10 +86,10 @@ def authenticate(email,password):
 def index():
 	return render_template('index.html')
 
-
+@app.route('/csv',methods=['GET'])
+def serve_csv():
+	return send_from_directory('.','search_engine_result.csv')
 
 
 if __name__ == '__main__':
-	with app.app_context():
-		db.create_all()
 	app.run(debug=True)
