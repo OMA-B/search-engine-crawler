@@ -3,11 +3,29 @@ from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import inspect
 
+from crawler import search_engines,scrap_web
+
+
 
 app = Flask('Search Engine Crawler')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 CORS(app)
 db = SQLAlchemy(app)
+
+@app.route('/scrape',methods=['POST'])
+def scrape():
+	info = request.get_json()
+	search_engine = info['engine']
+	URL = info['url']
+	input_selector = info['selector']
+	keyword = info['keyword']
+	search_result_title = info['title']
+	next_selector = info['next']
+	print('Scrape in progress....')
+	path = scrap_web(search_engine=search_engine,url=URL,input_selector=input_selector,search_result_title=search_result_title,next_selector=next_selector)
+	return send_from_directory('.',path)
+
+post= {'engine':'search_engine','url':'url','selector':'input_selector','keyword':'keyword','title':'search_result_title','next':'next_selector'}
 
 
 class User(db.Model):

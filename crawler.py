@@ -6,8 +6,7 @@ import time
 import pandas as pd
 
 # set up driver
-driver_path = 'C:\Development\chromedriver.exe'
-driver = webdriver.Chrome(executable_path=driver_path)
+driver = webdriver.Chrome()
 
 def scrap_web(search_engine, URL, input_selector, keyword, search_result_title, next_selector):
     # get the search engine website
@@ -85,7 +84,8 @@ def scrap_web(search_engine, URL, input_selector, keyword, search_result_title, 
     print(search_result_data)
     # convert data to csv file
     search_engine_result = pd.DataFrame(data=search_result_data)
-    search_engine_result.to_csv('search_engine_result.csv')
+    path = search_engine_result.to_csv(f'search_engine_result_for_{keyword}.csv')
+    return path
 
 # search engines dictionary for reference to be able get respective data
 search_engines = {
@@ -99,7 +99,7 @@ search_engines = {
 }
 
 search_engine = 'bing'
-keyword = 'hakuna matata'
+keyword = 'rakuna batata'
 
 for engine in search_engines:
     if engine == search_engine:
