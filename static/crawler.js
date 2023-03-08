@@ -1,8 +1,10 @@
 // grabbing elements for manipulation
-// const log_in_page = document.querySelector('.log_in');
+const log_in_page = document.querySelector('.log_in');
 const crawling_form = document.querySelector('.crawling_input_container form');
 const crawling_inputs = document.querySelectorAll('.crawling_input_container form input');
-// const search_engine_selection = document.querySelector('#search_engine_selection')
+const bottom_options = document.querySelector('.crawler_bottom_options');
+const crawling_input_container = document.querySelector('.crawling_input_container');
+const admin_chamber = document.querySelector('.admin_panel_container');
 // const status_message = document.querySelector('.sign_up .status_message');
 // const login_here = document.querySelector('.login_option button');
 // const sign_up_page = document.querySelector('.sign_up');
@@ -31,12 +33,12 @@ const save_user_data = async () => {
     };
 
     // console.log(JSON.stringify(user_data));
-    const response = await fetch('http://127.0.0.1:5500/signup', {
+    const response = await fetch('http://127.0.0.1:5000/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(user_data),
     });
-    const data = await response.JSON();
+    const data = await response.json();
     console.log(data);
 }
 
@@ -52,12 +54,23 @@ const process_form_data = (e) => {
     crawling_form.reset();
 }
 
-// go to sign up page if user is new
-// const switch_pages = () => {
-//     log_in_page.hidden = false;
-//     sign_up_page.hidden = true;
-// }
+// log user out and back to the login page
+const to_login_page = (page) => {
+    crawling_input_container.hidden = true;
+    page.parentElement.hidden = false;
+    page.parentElement.children[0].hidden = true;
+    page.parentElement.children[1].hidden = true;
+    page.hidden = false;
+}
+
+// take admin back to admin chamber
+const to_admin_chamber = () => {
+    crawling_input_container.hidden = true;
+    admin_chamber.hidden = false;
+}
 
 // EventListener
 crawling_form.addEventListener('submit', process_form_data);
+bottom_options.children[0].addEventListener('click', to_admin_chamber);
+bottom_options.children[1].addEventListener('click', () => { to_login_page(log_in_page) })
 // login_here.addEventListener('click', switch_pages)

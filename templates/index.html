@@ -11,7 +11,7 @@
 <body>
 
     <!-- LogIn and Sign Up section -->
-    <div class="user_input_container" >
+    <div class="user_input_container" hidden>
         <!-- LogIn section -->
         <div class="log_in">
             <h2 class="title">User LogIn</h2>
@@ -40,24 +40,82 @@
                 <span>Already have an account?</span>
                 <button>LogIn here</button>
             </div>
+            <div class="back_to_admin_container">
+                <button class="back_to_admin">Back To Admin</button>
+            </div>
         </div>
     </div>
 
     <!-- Admin Panel -->
+    <div class="admin_panel_container" hidden>
+        <h2 class="title">Admin Chamber</h2>
+        <div class="users_display">
+            <h3>Users</h3>
+            <ul class="users_list">
+                <li class="user">
+                    <ul class="user_info">
+                        <li class="username">Username: <span>Michael</span></li>
+                        <li class="email">Email: <span>michael@gmail.com</span></li>
+                        <li class="password">Password: <span>Yadayadayada1</span></li>
+                        <button class="delete">delete user</button>
+                    </ul>
+                </li>
+                <li class="user">
+                    <ul class="user_info">
+                        <li class="username">Username: <span>OMA</span></li>
+                        <li class="email">Email: <span>michael@gmail.com</span></li>
+                        <li class="password">Password: <span>Yadayadayada1</span></li>
+                        <button class="delete">delete user</button>
+                    </ul>
+                </li>
+                <li class="user">
+                    <ul class="user_info">
+                        <li class="username">Username: <span>Diana</span></li>
+                        <li class="email">Email: <span>michael@gmail.com</span></li>
+                        <li class="password">Password: <span>Yadayadayada1</span></li>
+                        <button class="delete">delete user</button>
+                    </ul>
+                </li>
+                <li class="user">
+                    <ul class="user_info">
+                        <li class="username">Username: <span>Bobby</span></li>
+                        <li class="email">Email: <span>michael@gmail.com</span></li>
+                        <li class="password">Password: <span>Yadayadayada1</span></li>
+                        <button class="delete">delete user</button>
+                    </ul>
+                </li>
+                <li class="user">
+                    <ul class="user_info">
+                        <li class="username">Username: <span>Michael</span></li>
+                        <li class="email">Email: <span>michael@gmail.com</span></li>
+                        <li class="password">Password: <span>Yadayadayada1</span></li>
+                        <button class="delete">delete user</button>
+                    </ul>
+                </li>
+            </ul>
+            <p class="info">Click on a user to delete the account.</p>
+            <p class="info2">To sign up a new user, click <button>Register Now</button></p>
+            <p class="info2">Maximum of 5 Users allowed.</p>
+            <!-- Access Crawler's page -->
+            <button class="crawler_page" id="button">Go To Crawler's Page</button>
+            <!-- Log Out -->
+            <button class="log_out" id="button">Log Out</button>
+        </div>
+    </div>
 
     <!-- Search Crawling Input Section -->
-    <div class="crawling_input_container" hidden>
-        <h2 class="title">Crawler Instructions</h2>
+    <div class="crawling_input_container" >
+        <h2 class="title">Crawler's Page</h2>
         <form action="POST">
             <div class="search_engine_container">
                 <label for="search_engine_selection">Select an engine to search on:</label>
                 <select name="search_engine_selection" id="search_engine_selection" class="engine_options" required>
-                    <option value="google" selected>Google Search</option>
+                    <!-- <option value="google" selected>Google Search</option> -->
                     <option value="yahoo">Yahoo Search</option>
                     <option value="bing">Microsoft Bing</option>
-                    <option value="yandex">Yandex</option>
+                    <!-- <option value="yandex">Yandex</option> -->
                     <option value="duckduckgo">DuckDuckGo</option>
-                    <option value="dogpile">DogPile</option>
+                    <!-- <option value="dogpile">DogPile</option> -->
                     <option value="ask">Ask</option>
                 </select>
             </div>
@@ -66,6 +124,13 @@
             <input type="number" name="max_search_number" id="max_search_number" placeholder="Enter maximum number of search. . ." min="1" max="500" required>
             <input type="submit" value="START" id="button">
         </form>
+        <div class="status_message" hidden>Crawling In Progress. . .</div>
+        <div class="crawler_bottom_options">
+            <div class="back_to_admin_container">
+                <button class="back_to_admin">Back To Admin</button>
+            </div>
+            <button class="log_out" id="button">Log Out</button>
+        </div>
     </div>
 
     <!-- Functionality Section -->

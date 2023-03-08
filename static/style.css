@@ -6,6 +6,8 @@ body, body * {
     box-sizing: border-box;
     font-family: 'Comfortaa', sans-serif;
     outline: none;
+    text-decoration: none;
+    list-style: none;
 }
 
 body {
@@ -18,7 +20,7 @@ body {
 }
 
 /* --------- LogIn Section / Sign Up section / Search Crawling Input Section -------- */
-.user_input_container, .crawling_input_container {
+.user_input_container, .crawling_input_container, .admin_panel_container {
     width: 90%;
     max-width: 450px;
     background: whitesmoke;
@@ -46,8 +48,8 @@ body {
     border-radius: 5px;
     margin-bottom: 10px;
 }
-/* .log_in form input:focus { outline-color: non;} */
 
+/* ------------ for input buttons --------------- */
 #button {
     background-color: rgb(92, 137, 233);
     cursor: pointer;
@@ -55,7 +57,7 @@ body {
 }
 #button:hover, #button:active { filter: brightness(85%); }
 
-.status_message {
+.status_message, .info2 {
     text-align: center;
     font-size: 13px;
     font-weight: bold;
@@ -63,24 +65,107 @@ body {
     margin: -5px 0px 10px;
 }
 
-.register_option, .login_option {
+.register_option, .login_option, .crawler_bottom_options {
     width: calc(100% - 20px);
     margin: 0px auto 10px;
     display: flex;
     justify-content: space-between;
 }
 
-.register_option *, .login_option *, .crawling_input_container form label {
+.register_option *, .login_option *, .crawling_input_container form label, .back_to_admin {
     font-size: 13px;
     font-weight: bold;
     color: #141414;
 }
 
-.register_option button, .login_option button {
+/* ------------ for other buttons --------------- */
+.register_option button, .login_option button, .info2 button, .users_list .user .delete, .back_to_admin {
     border: none;
     background-color: transparent;
     text-decoration: underline;
     cursor: pointer;
 }
 
-.register_option button:hover, .register_option button:active, .login_option button:hover, .login_option button:active { color: blue; }
+.sign_up .back_to_admin {
+    display: block;
+    margin: 10px auto;
+}
+
+.register_option button:hover, .register_option button:active, .login_option button:hover, .login_option button:active, .info2 button:hover, .info2 button:active, .back_to_admin:hover, .back_to_admin:active { color: blue; }
+
+/* ------------------ Admin Panel ----------- */
+.user_input_container, .crawling_input_container, .admin_panel_container { max-width: 600px; }
+
+.users_display {
+    width: 97%;
+    margin: 10px auto;
+    font-weight: bold;
+}
+
+.users_display h3 {
+    text-align: center;
+    font-size: 18px;
+}
+
+.users_list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.users_list .user {
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: auto;
+}
+
+.users_list .user:hover, .users_list .user:active {
+    background: #eee;
+    transform: scale(1.05);
+}
+
+.users_list .user .user_info { margin: auto; }
+
+.users_list .user .delete {
+    display: block;
+    text-align: center;
+    margin: 5px auto 0px;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.users_list .user .delete:hover, .users_list .user .delete:active {
+    color: red;
+    text-decoration: underline;
+}
+
+.info {
+    color: red;
+    text-align: center;
+}
+
+.info2 { margin-top: 7px; }
+
+.info2 button { font-size: 12px; }
+
+.admin_panel_container .crawler_page, .log_out {
+    display: block;
+    margin: auto;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 20px;
+}
+
+.log_out {
+    margin-top: 15px;
+    background-color: red !important;
+    color: whitesmoke;
+}
+
+/* ------------ more on crawler's page --------------- */
+.crawler_bottom_options * {
+    display: inline-block;
+    margin: 0;
+}
+.crawler_bottom_options .back_to_admin_container { padding-top: 8px; }
+.back_to_admin_container { display: none; }

@@ -5,6 +5,8 @@ const signup_inputs = document.querySelectorAll('.sign_up form input');
 const status_message = document.querySelector('.sign_up .status_message');
 const login_here = document.querySelector('.login_option button');
 const sign_up_page = document.querySelector('.sign_up');
+const back_to_admin = document.querySelector('.sign_up .back_to_admin');
+const admin_chamber = document.querySelector('.admin_panel_container');
 
 // scanning inputs for validity
 const check_validity = () => {
@@ -61,12 +63,19 @@ const process_form_data = (e) => {
     signup_form.reset();
 }
 
-// go to sign up page if user is new
+// go to login page if user is not new
 const switch_pages = () => {
     log_in_page.hidden = false;
     sign_up_page.hidden = true;
 }
 
+// take admin back to admin chamber
+const to_admin_chamber = () => {
+    sign_up_page.parentElement.hidden = true;
+    admin_chamber.hidden = false;
+}
+
 // EventListener
 signup_form.addEventListener('submit', process_form_data);
-login_here.addEventListener('click', switch_pages)
+login_here.addEventListener('click', switch_pages);
+back_to_admin.addEventListener('click', to_admin_chamber);
