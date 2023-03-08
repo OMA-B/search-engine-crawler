@@ -20,7 +20,7 @@
                 <input type="password" name="password" id="password" placeholder="Enter Password (Min. 8 characters)" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$" title="At least 1 uppercase letter, 1 lowercase letter and a number!">
                 <input type="submit" value="LogIn" id="button">
             </form>
-            <div class="status_message" hidden>Incorrect Details!</div>
+            <div class="status_message" hidden></div>
             <div class="register_option">
                 <span>Don't have an account?</span>
                 <button>Register Now</button>
@@ -35,7 +35,7 @@
                 <input type="password" name="password" id="password" placeholder="Create Password (Min. 8 characters)" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$" title="At least 1 uppercase letter, 1 lowercase letter and a number!">
                 <input type="submit" value="Register" id="button">
             </form>
-            <div class="status_message" hidden>Successfully Registered</div>
+            <div class="status_message" hidden></div>
             <div class="login_option">
                 <span>Already have an account?</span>
                 <button>LogIn here</button>
@@ -63,7 +63,7 @@
             </div>
             <input type="text" name="keyword" id="keyword" placeholder="Enter Keyword Phrase to search. . ." required minlength="3">
             <input type="number" name="page_depth" id="page_depth" placeholder="Enter Page Depth Number. . ." min="1" max="10" required>
-            <input type="number" name="max_search_number" id="max_search_number" placeholder="Enter maximum number of search. . ." min="1" max="10000" required>
+            <input type="number" name="max_search_number" id="max_search_number" placeholder="Enter maximum number of search. . ." min="1" max="500" required>
             <input type="submit" value="START" id="button">
         </form>
     </div>

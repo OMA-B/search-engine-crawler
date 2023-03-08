@@ -28,14 +28,25 @@ const save_user_data = async () => {
         password: signup_form.password.value,
     };
 
-    console.log(JSON.stringify(user_data));
-    // const response = await fetch('http://127.0.0.1:5500/signup', {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify(user_data),
-    // });
-    // const data = await response.JSON();
-    // console.log(data);
+    // console.log(JSON.stringify(user_data));
+    const response = await fetch('http://127.0.0.1:5000/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(user_data),
+    });
+    const data = await response.json();
+    console.log(data);
+
+    if (data.message === 'User created') {
+        status_message.hidden = false;
+        status_message.textContent = 'Successfully Registered! Redirecting. . .'
+        setTimeout(() => { switch_pages(); }, 3000);
+        setTimeout(() => { status_message.hidden = true; }, 10000);
+    } else {
+        status_message.hidden = false;
+        status_message.textContent = 'This account already exists.\nConsider logging in instead.'
+        setTimeout(() => { status_message.hidden = true; }, 10000);
+    }
 }
 
 // processing form data

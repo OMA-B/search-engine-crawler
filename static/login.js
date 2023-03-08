@@ -36,12 +36,20 @@ const confirm_user_data = async () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(user_data),
     });
-    const data = await response.JSON();
+    const data = await response.json();
     console.log(data);
 
     // if user data exists, take user to crawler's page
-    // user_input_container.hidden = true;
-    // crawling_input_container.hidden = false;
+    if (user_data.email === data.email) {
+        user_input_container.hidden = true;
+        crawling_input_container.hidden = false;
+        // clear inputs
+        login_form.reset()
+    } else {
+        status_message.hidden = false;
+        status_message.textContent = `${data.message}\nConsider signing up!`;
+        setTimeout(() => { status_message.hidden = true; }, 10000);
+    }
     // if not, display "incorrect login details" message to user
 }
 
@@ -52,9 +60,6 @@ const process_form_data = (e) => {
 
     // save user data
     confirm_user_data();
-
-    // clear inputs
-    login_form.reset()
 }
 
 // go to sign up page if user is new
