@@ -2,18 +2,22 @@ import selenium
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-import time
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.options import Options
 import pandas as pd
 
-# set up driver
-driver = webdriver.Chrome()
+# set up headless driver
+chrome_options = Options()
+chrome_options.headless = True
+driver = webdriver.Chrome(chrome_options=chrome_options)
 
-def scrape_web(search_engine, URL, input_selector, keyword, search_result_title, next_selector, max_search_num):
+def scrape_web(search_engine, URL, input_selector, keyword, search_result_title, next_selector, page_depth_num, max_search_num):
     # get the search engine website
     driver.get(url=URL)
+    wait = WebDriverWait(driver=driver, timeout=10.0)
 
-    # time.sleep(5)
-    search_bar = driver.find_element(input_selector[0], input_selector[1])
+    search_bar = wait.until(EC.presence_of_element_located((input_selector[0], input_selector[1])))
     search_bar.send_keys(keyword, Keys.ENTER)
 
     titles = []
@@ -23,25 +27,25 @@ def scrape_web(search_engine, URL, input_selector, keyword, search_result_title,
         for num in range(max_search_num): # 10 will be replaced with max search number
             try:
                 def click_next():
-                    time.sleep(2)
-                    next_button = driver.find_element(next_selector[0], next_selector[1])
+                    next_button = wait.until(EC.presence_of_element_located((next_selector[0], next_selector[1])))
                     next_button.click()
                 
                 click_next()
-            except selenium.common.exceptions.ElementClickInterceptedException:
+            except selenium.common.exceptions.ElementClickInterceptedException or selenium.common.exceptions.TimeoutException:
                 try:
                     click_next()
-                except selenium.common.exceptions.NoSuchElementException:
+                except selenium.common.exceptions.NoSuchElementException or selenium.common.exceptions.TimeoutException:
                     break
 
-        title_tags = driver.find_elements(By.CSS_SELECTOR, search_result_title)
+        title_tags = wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, search_result_title)))
 
         titles = [(title.text, title.get_attribute('href')) for title in title_tags]
     else:
         for num in range(max_search_num): # 10 will be replaced with max search number
-            time.sleep(2)
-
-            title_tags = driver.find_elements(By.CSS_SELECTOR, search_result_title)
+            try:
+                title_tags = wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, search_result_title)))
+            except selenium.common.exceptions.TimeoutException:
+                break
             
             for title in title_tags:
                 if search_engine == 'yahoo':
@@ -51,12 +55,11 @@ def scrape_web(search_engine, URL, input_selector, keyword, search_result_title,
 
             try:
                 def click_next():
-                    time.sleep(5)
-                    next_button = driver.find_element(next_selector[0], next_selector[1])
+                    next_button = wait.until(EC.presence_of_element_located((next_selector[0], next_selector[1])))
                     next_button.click()
                 
                 click_next()
-            except selenium.common.exceptions.ElementClickInterceptedException:
+            except selenium.common.exceptions.ElementClickInterceptedException or selenium.common.exceptions.TimeoutException:
                 try:
                     click_next()
                 except:
@@ -73,7 +76,8 @@ def scrape_web(search_engine, URL, input_selector, keyword, search_result_title,
             if character == '/':
                 page_depth += 1 
 
-        required_list.append((title, title_link, page_depth - 2))
+        if page_depth_num + 2 == page_depth:
+            required_list.append((title, title_link, page_depth - 2))
 
     # now store data retrived in a file
     search_result_data = {
@@ -107,10 +111,10 @@ def run_crawler(search_engine_name, search_phrase, page_depth_num, max_search_nu
     max_search_number = max_search_num
 
     requirements = search_engines[search_engine]
-    scrape_web(search_engine=search_engine, URL=requirements[0], input_selector=requirements[1], keyword=keyword, search_result_title=requirements[2], next_selector=requirements[3], max_search_num=max_search_number)
+    scrape_web(search_engine=search_engine, URL=requirements[0], input_selector=requirements[1], keyword=keyword, search_result_title=requirements[2], next_selector=requirements[3], page_depth_num=page_depth_number, max_search_num=max_search_number)
 
 # testing
-# run_crawler(search_engine_name='yahoo', search_phrase='atlantic ocean', page_depth_num=3, max_search_num=10)
+# run_crawler(search_engine_name='bing', search_phrase='atlantic ocean', page_depth_num=3, max_search_num=10)
 
 
 # for google // captcha issue
