@@ -33,7 +33,7 @@ const save_user_data = async () => {
     };
 
     // console.log(JSON.stringify(user_data));
-    const response = await fetch('http://127.0.0.1:5000/signup', {
+    const response = await fetch('http://127.0.0.1:5000/scrape', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(user_data),

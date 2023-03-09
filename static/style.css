@@ -50,12 +50,12 @@ body {
 }
 
 /* ------------ for input buttons --------------- */
-#button {
+#button, .csv_container button {
     background-color: rgb(92, 137, 233);
     cursor: pointer;
     font-size: 20px;
 }
-#button:hover, #button:active { filter: brightness(85%); }
+#button:hover, #button:active, .csv_container button:hover, .csv_container button:active { filter: brightness(85%); }
 
 .status_message, .info2 {
     text-align: center;
@@ -169,3 +169,18 @@ body {
 }
 .crawler_bottom_options .back_to_admin_container { padding-top: 8px; }
 .back_to_admin_container { display: none; }
+
+.csv_container {
+    width: calc(100% - 20px);
+    margin: 0px auto 10px;
+}
+
+.csv_container button {
+    display: block;
+    margin: auto;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+}

@@ -13,13 +13,14 @@
     <!-- LogIn and Sign Up section -->
     <div class="user_input_container" hidden>
         <!-- LogIn section -->
-        <div class="log_in">
+        <div class="log_in" hidden>
             <h2 class="title">User LogIn</h2>
             <form action="POST">
                 <input type="email" name="email" id="email" placeholder="Enter Email Address..." required>
                 <input type="password" name="password" id="password" placeholder="Enter Password (Min. 8 characters)" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$" title="At least 1 uppercase letter, 1 lowercase letter and a number!">
                 <input type="submit" value="LogIn" id="button">
             </form>
+            <!-- message populated in JS, to feed user back -->
             <div class="status_message" hidden></div>
             <div class="register_option">
                 <span>Don't have an account?</span>
@@ -27,14 +28,16 @@
             </div>
         </div>
         <!-- Sign Up section -->
-        <div class="sign_up" hidden>
+        <div class="sign_up" >
             <h2 class="title">Sign Up</h2>
             <form action="POST">
                 <input type="text" name="username" id="username" placeholder="Enter A Username..." required minlength="3">
                 <input type="email" name="email" id="email" placeholder="Enter Email Address..." required>
                 <input type="password" name="password" id="password" placeholder="Create Password (Min. 8 characters)" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$" title="At least 1 uppercase letter, 1 lowercase letter and a number!">
+                <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$" title="Retype password given above!">
                 <input type="submit" value="Register" id="button">
             </form>
+            <!-- message populated in JS, to feed user back -->
             <div class="status_message" hidden></div>
             <div class="login_option">
                 <span>Already have an account?</span>
@@ -84,14 +87,6 @@
                         <button class="delete">delete user</button>
                     </ul>
                 </li>
-                <li class="user">
-                    <ul class="user_info">
-                        <li class="username">Username: <span>Michael</span></li>
-                        <li class="email">Email: <span>michael@gmail.com</span></li>
-                        <li class="password">Password: <span>Yadayadayada1</span></li>
-                        <button class="delete">delete user</button>
-                    </ul>
-                </li>
             </ul>
             <p class="info">Click on a user to delete the account.</p>
             <p class="info2">To sign up a new user, click <button>Register Now</button></p>
@@ -124,11 +119,12 @@
             <input type="number" name="max_search_number" id="max_search_number" placeholder="Enter maximum number of search. . ." min="1" max="500" required>
             <input type="submit" value="START" id="button">
         </form>
+        <!-- message to update user for patience -->
         <div class="status_message" hidden>Crawling In Progress. . .</div>
         <!-- for csv file download -->
-        <div class="csv_container">
-            <a href="../search_engine_result.csv" class="csv_link" download="search_engine_result.csv">
-                <button>DOWNLOAD NOW</button>
+        <div class="csv_container" hidden>
+            <a href="search_engine_result.csv" class="csv_link" download="search_engine_result.csv">
+                <button>DOWNLOAD CSV FILE</button>
             </a>
         </div>
         <div class="crawler_bottom_options">

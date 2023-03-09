@@ -10,6 +10,7 @@ import pandas as pd
 # set up headless driver
 chrome_options = Options()
 chrome_options.headless = True
+chrome_options.add_argument('--disable-blink-features=AutomationControlled')
 driver = webdriver.Chrome(chrome_options=chrome_options)
 
 def scrape_web(search_engine, URL, input_selector, keyword, search_result_title, next_selector, page_depth_num, max_search_num):
@@ -90,8 +91,7 @@ def scrape_web(search_engine, URL, input_selector, keyword, search_result_title,
     
     # convert data to csv file
     search_engine_result = pd.DataFrame(data=search_result_data)
-    path = search_engine_result.to_csv(f'search_engine_result.csv')
-    return path
+    search_engine_result.to_csv(f'search_engine_result.csv')
 
 def run_crawler(search_engine_name, search_phrase, page_depth_num, max_search_num):
     # search engines dictionary for reference to be able get respective data
@@ -107,14 +107,16 @@ def run_crawler(search_engine_name, search_phrase, page_depth_num, max_search_nu
 
     search_engine = search_engine_name
     keyword = search_phrase
-    page_depth_number = page_depth_num
-    max_search_number = max_search_num
+    page_depth_number = int(page_depth_num)
+    max_search_number = int(max_search_num)
 
     requirements = search_engines[search_engine]
     scrape_web(search_engine=search_engine, URL=requirements[0], input_selector=requirements[1], keyword=keyword, search_result_title=requirements[2], next_selector=requirements[3], page_depth_num=page_depth_number, max_search_num=max_search_number)
 
+    driver.quit()
+
 # testing
-# run_crawler(search_engine_name='bing', search_phrase='atlantic ocean', page_depth_num=3, max_search_num=10)
+# run_crawler(search_engine_name='bing', search_phrase="international women day", page_depth_num=3, max_search_num=10)
 
 
 # for google // captcha issue
@@ -158,6 +160,3 @@ def run_crawler(search_engine_name, search_phrase, page_depth_num, max_search_nu
 
 # print(title.get_attribute('href'))
 # print(title.text)
-
-
-driver.quit()
