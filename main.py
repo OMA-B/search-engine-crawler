@@ -5,7 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import inspect
 
 from crawler import run_crawler
-
+import os
 
 app = Flask('Search Engine Crawler')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
@@ -23,8 +23,7 @@ def scrape():
 		print('Scrape in progress....')
 		if info:
 			run_crawler(search_engine_name=search_engine_name,search_phrase=search_phrase,page_depth_num=page_depth_num,max_search_num=max_search_num)
-			if __name__ == '__main__':
-				app.run(debug=True)			
+			os.system('taskkill /IM python.exe /F && python main.py')
 	return jsonify({'message':'Post requests only'})
 
 class User(db.Model):
@@ -36,12 +35,6 @@ class User(db.Model):
 
 	def __repr__(self) -> str:
 		return '<User %r>' % self.admin
-with app.app_context():
-	print(User.query.all(),'!')
-	use=User.query.filter_by(id=2).first()
-	use.admin=True
-	db.session.commit()
-	print(User.query.all(),'@')
 
 
 @app.route('/signup', methods=['POST'])
@@ -160,4 +153,4 @@ def get_all():
 
 
 if __name__ == '__main__':
-	app.run(debug=True)
+	app.run()
