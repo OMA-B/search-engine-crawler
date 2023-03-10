@@ -83,12 +83,13 @@ def delete_user():
 	exists = User.query.filter_by(email=email).first()
 	if is_admin(email):
 		new=User.query.filter_by(id=int(exists.id)+1)
-		db.session.delete(exists)
-		db.session.commit()
 		if new:
 			exists.admin=False
 			new.admin=True
+			db.session.delete(exists)
 			db.session.commit()
+		else:
+			return({'message':'You are the only user'})
 		return jsonify({'message':f'Admin {exists} Deleted\nNew admin is {new}'})
 	if exists:
 		user=exists.username
