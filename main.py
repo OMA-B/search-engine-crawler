@@ -3,6 +3,7 @@ from flask import Flask, request, jsonify,render_template,send_from_directory
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import inspect
+# from werkzeug.serving import run_with_reloader
 
 from crawler import run_crawler
 
@@ -23,8 +24,8 @@ def scrape():
 		print('Scrape in progress....')
 		if info:
 			run_crawler(search_engine_name=search_engine_name,search_phrase=search_phrase,page_depth_num=page_depth_num,max_search_num=max_search_num)
-			if __name__ == '__main__':
-				app.run(debug=True)			
+		# if __name__ == '__main__':
+		# 	run_with_reloader(lambda: app.run(debug=True))			
 	return jsonify({'message':'Post requests only'})
 
 class User(db.Model):

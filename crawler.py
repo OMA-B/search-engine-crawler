@@ -5,20 +5,24 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
+# from selenium.webdriver.common.action_chains import ActionChains
 import pandas as pd
 
-# set up headless driver
-chrome_options = Options()
-chrome_options.headless = True
-chrome_options.add_argument('--disable-blink-features=AutomationControlled')
-driver = webdriver.Chrome(chrome_options=chrome_options)
+# driver = webdriver.Remote(command_executor='http://127.0.0.1:5000/', desired_capabilities=webdriver.DesiredCapabilities.CHROME)
 
 def scrape_web(search_engine, URL, input_selector, keyword, search_result_title, next_selector, page_depth_num, max_search_num):
+    # set up headless driver
+    chrome_options = Options()
+    chrome_options.headless = True
+    chrome_options.add_argument('--disable-blink-features=AutomationControlled')
+    driver = webdriver.Chrome(chrome_options=chrome_options)
     # get the search engine website
     driver.get(url=URL)
-    wait = WebDriverWait(driver=driver, timeout=10.0)
+    # assert 'Ask' in driver.title
+    wait = WebDriverWait(driver=driver, timeout=20.0)
 
     search_bar = wait.until(EC.presence_of_element_located((input_selector[0], input_selector[1])))
+    # ActionChains(driver=driver).move_to_element(search_bar).send_keys(keyword, Keys.ENTER).perform()
     search_bar.send_keys(keyword, Keys.ENTER)
 
     titles = []
@@ -66,6 +70,8 @@ def scrape_web(search_engine, URL, input_selector, keyword, search_result_title,
                 except:
                     break
 
+    driver.quit()
+
     required_list = []
 
     for tuple in titles:
@@ -112,8 +118,6 @@ def run_crawler(search_engine_name, search_phrase, page_depth_num, max_search_nu
 
     requirements = search_engines[search_engine]
     scrape_web(search_engine=search_engine, URL=requirements[0], input_selector=requirements[1], keyword=keyword, search_result_title=requirements[2], next_selector=requirements[3], page_depth_num=page_depth_number, max_search_num=max_search_number)
-
-    driver.quit()
 
 # testing
 # run_crawler(search_engine_name='bing', search_phrase="international women day", page_depth_num=3, max_search_num=10)
