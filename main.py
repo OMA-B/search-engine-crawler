@@ -6,7 +6,7 @@ from sqlalchemy import inspect
 # from werkzeug.serving import run_with_reloader
 
 from crawler import run_crawler
-
+import os
 
 app = Flask('Search Engine Crawler')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
@@ -37,12 +37,6 @@ class User(db.Model):
 
 	def __repr__(self) -> str:
 		return '<User %r>' % self.admin
-with app.app_context():
-	print(User.query.all(),'!')
-	use=User.query.filter_by(id=2).first()
-	use.admin=True
-	db.session.commit()
-	print(User.query.all(),'@')
 
 
 @app.route('/signup', methods=['POST'])
@@ -161,4 +155,4 @@ def get_all():
 
 
 if __name__ == '__main__':
-	app.run(debug=True)
+	app.run()
