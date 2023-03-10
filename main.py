@@ -88,7 +88,7 @@ def delete_user():
 			new.admin=True
 			db.session.commit()
 			print(f"{exists.email=} {new.email=}")
-			return jsonify({'message':f'Admin {exists.email} Deleted\nNew admin is {new.email}'})
+			return jsonify({'message':f'Admin {exists.username} Deleted. New admin is {new.username}'})
 		else:
 			return jsonify({'message':"You're the only user"})
 	if exists:

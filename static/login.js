@@ -1,3 +1,5 @@
+import { fetch_csv_file } from "./crawler.js";
+
 // grabbing elements for manipulation
 const login_form = document.querySelector('.log_in form');
 const login_inputs = document.querySelectorAll('.log_in form input');
@@ -55,6 +57,7 @@ const confirm_user_data = async () => {
         // but if user is admin, redirect to admin chamber instead
         if (data.admin === true) {
             admin_panel_container.hidden = false;
+            fetch_csv_file();
         } else {
             crawling_input_container.hidden = false;
         }

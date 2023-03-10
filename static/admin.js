@@ -7,6 +7,7 @@ const log_in_page = document.querySelector('.log_in');
 const sign_up_page = document.querySelector('.sign_up');
 const crawling_input_container = document.querySelector('.crawling_input_container');
 const users_list = document.querySelector('.admin_panel_container .users_list');
+const info = document.querySelector('.admin_panel_container .info');
 
 // fetching users' data
 export const fetch_users_data = async () => {
@@ -17,12 +18,12 @@ export const fetch_users_data = async () => {
 
     // populating DOM with users' data
     users_list.textContent = '';
-    
+
     data.forEach(user => {
         // create elements
         const username = document.createElement('div');
         username.classList.add('username');
-        username.textContent = `Username: ${user.username}`;
+        user.admin ? username.textContent = `Username: ${user.username} {ADMIN}🚩` : username.textContent = `Username: ${user.username}`;
         const email = document.createElement('div');
         email.classList.add('email');
         email.textContent = `Email: ${user.email}`;
@@ -48,6 +49,8 @@ export const fetch_users_data = async () => {
             });
             const reply = await response.json();
             console.log(reply);
+            info.textContent = reply.message;
+            setTimeout(() => { info.textContent = "Click a user's delete button to delete the account." }, 5000);
 
             fetch_users_data();
         });

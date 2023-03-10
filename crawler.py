@@ -19,7 +19,7 @@ def scrape_web(search_engine, URL, input_selector, keyword, search_result_title,
     # get the search engine website
     driver.get(url=URL)
     # assert 'Ask' in driver.title
-    wait = WebDriverWait(driver=driver, timeout=20.0)
+    wait = WebDriverWait(driver=driver, timeout=120.0)
 
     search_bar = wait.until(EC.presence_of_element_located((input_selector[0], input_selector[1])))
     # ActionChains(driver=driver).move_to_element(search_bar).send_keys(keyword, Keys.ENTER).perform()
