@@ -1,5 +1,5 @@
 import random
-from flask import Flask, request, jsonify,render_template,send_from_directory
+from flask import Flask, request, jsonify,render_template, send_file,send_from_directory
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import inspect
@@ -35,12 +35,12 @@ class User(db.Model):
 
 	def __repr__(self) -> str:
 		return '<User %r>' % self.admin
-with app.app_context():
-	print(User.query.all(),'!')
-	use=User.query.filter_by(id=2).first()
-	# use.admin=True
-	db.session.commit()
-	print(User.query.all(),'@')
+# with app.app_context():
+# 	print(User.query.all(),'!')
+# 	use=User.query.filter_by(id=2).first()
+# 	# use.admin=True
+# 	db.session.commit()
+# 	print(User.query.all(),'@')
 
 
 @app.route('/signup', methods=['POST'])
@@ -80,14 +80,17 @@ def delete_user():
 	email=request.get_json()['email']
 	exists = User.query.filter_by(email=email).first()
 	if is_admin(email):
-		new=User.query.filter_by(id=int(exists.id)+1)
-		db.session.delete(exists)
-		db.session.commit()
+		new=User.query.filter_by(id=int(exists.id)+1).first()
 		if new:
 			exists.admin=False
+			db.session.commit()
+			db.session.delete(exists)
 			new.admin=True
 			db.session.commit()
-		return jsonify({'message':f'Admin {exists} Deleted\nNew admin is {new}'})
+			print(f"{exists.email=} {new.email=}")
+			return jsonify({'message':f'Admin {exists.email} Deleted\nNew admin is {new.email}'})
+		else:
+			return jsonify({'message':"You're the only user"})
 	if exists:
 		user=exists.username
 		db.session.delete(exists)
@@ -153,6 +156,10 @@ def get_all():
 
 	return jsonify(json_arr)
 
+@app.route('/csv')
+def download_csv():
+    filename = 'search_engine_result.csv'
+    return send_file(filename, as_attachment=True)
 
 if __name__ == '__main__':
 	app.run(debug=True)
