@@ -38,7 +38,8 @@
                 <input type="submit" value="Register" id="button">
             </form>
             <!-- message populated in JS, to feed user back -->
-            <div class="status_message" hidden></div>
+            <div class="status_message for_password" hidden></div>
+            <div class="status_message for_success" hidden></div>
             <div class="login_option">
                 <span>Already have an account?</span>
                 <button>LogIn here</button>
@@ -50,43 +51,17 @@
     </div>
 
     <!-- Admin Panel -->
-    <div class="admin_panel_container" hidden>
+    <div class="admin_panel_container" >
         <h2 class="title">Admin Chamber</h2>
         <div class="users_display">
             <h3>Users</h3>
             <ul class="users_list">
-                <li class="user">
-                    <ul class="user_info">
-                        <li class="username">Username: <span>Michael</span></li>
-                        <li class="email">Email: <span>michael@gmail.com</span></li>
-                        <li class="password">Password: <span>Yadayadayada1</span></li>
-                        <button class="delete">delete user</button>
-                    </ul>
-                </li>
-                <li class="user">
-                    <ul class="user_info">
-                        <li class="username">Username: <span>OMA</span></li>
-                        <li class="email">Email: <span>michael@gmail.com</span></li>
-                        <li class="password">Password: <span>Yadayadayada1</span></li>
-                        <button class="delete">delete user</button>
-                    </ul>
-                </li>
-                <li class="user">
-                    <ul class="user_info">
-                        <li class="username">Username: <span>Diana</span></li>
-                        <li class="email">Email: <span>michael@gmail.com</span></li>
-                        <li class="password">Password: <span>Yadayadayada1</span></li>
-                        <button class="delete">delete user</button>
-                    </ul>
-                </li>
-                <li class="user">
-                    <ul class="user_info">
-                        <li class="username">Username: <span>Bobby</span></li>
-                        <li class="email">Email: <span>michael@gmail.com</span></li>
-                        <li class="password">Password: <span>Yadayadayada1</span></li>
-                        <button class="delete">delete user</button>
-                    </ul>
-                </li>
+                <!-- <li class="user">
+                    <div class="username">Username: Michael</div>
+                    <div class="email">Email: michael@gmail.com</div>
+                    <div class="password">Password: Yadayadayada1</div>
+                    <button class="delete">delete user</button>
+                </li> -->
             </ul>
             <p class="info">Click on a user to delete the account.</p>
             <p class="info2">To sign up a new user, click <button>Register Now</button></p>
@@ -99,7 +74,7 @@
     </div>
 
     <!-- Search Crawling Input Section -->
-    <div class="crawling_input_container" >
+    <div class="crawling_input_container" hidden>
         <h2 class="title">Crawler's Page</h2>
         <form action="POST">
             <div class="search_engine_container">
