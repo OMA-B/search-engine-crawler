@@ -1,4 +1,4 @@
-import json
+import random
 from flask import Flask, request, jsonify,render_template,send_from_directory
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
@@ -23,9 +23,7 @@ def scrape():
 		max_search_num = info['max_search_number']
 		print('Scrape in progress....')
 		if info:
-			run_crawler(search_engine_name=search_engine_name,search_phrase=search_phrase,page_depth_num=page_depth_num,max_search_num=max_search_num)
-		# if __name__ == '__main__':
-		# 	run_with_reloader(lambda: app.run(debug=True))			
+			run_crawler(search_engine_name=search_engine_name,search_phrase=search_phrase,page_depth_num=page_depth_num,max_search_num=max_search_num)			
 	return jsonify({'message':'Post requests only'})
 
 class User(db.Model):
@@ -40,7 +38,7 @@ class User(db.Model):
 with app.app_context():
 	print(User.query.all(),'!')
 	use=User.query.filter_by(id=2).first()
-	use.admin=True
+	# use.admin=True
 	db.session.commit()
 	print(User.query.all(),'@')
 
@@ -56,11 +54,11 @@ def create_user():
 
 	is_user = User.query.filter_by(email=email).first()
 	if is_user is not None:
-		info = {'message': 'User already exists'}
+		info = {'message': 'This email already exists.'}
 		return jsonify(info)
 	else:
 		if len(User.query.all()) == 5:
-			return jsonify({'message':'Max Users limit reached'})
+			return jsonify({'message':'Max Users limit reached.'})
 		else:
 			user = User(
 				username=username,
@@ -83,13 +81,12 @@ def delete_user():
 	exists = User.query.filter_by(email=email).first()
 	if is_admin(email):
 		new=User.query.filter_by(id=int(exists.id)+1)
+		db.session.delete(exists)
+		db.session.commit()
 		if new:
 			exists.admin=False
 			new.admin=True
-			db.session.delete(exists)
 			db.session.commit()
-		else:
-			return({'message':'You are the only user'})
 		return jsonify({'message':f'Admin {exists} Deleted\nNew admin is {new}'})
 	if exists:
 		user=exists.username
@@ -154,11 +151,7 @@ def get_all():
 			}
 		)
 
-	with open('users.json','w') as file:
-		json.dump(json_arr,file)
-	with open('users.json','r') as json_out_file:
-		out=json.load(json_out_file)
-	return jsonify(out)
+	return jsonify(json_arr)
 
 
 if __name__ == '__main__':

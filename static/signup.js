@@ -1,8 +1,10 @@
+import { fetch_users_data } from "./admin.js";
+
 // grabbing elements for manipulation
 const log_in_page = document.querySelector('.log_in');
 const signup_form = document.querySelector('.sign_up form');
 const signup_inputs = document.querySelectorAll('.sign_up form input');
-const status_message = document.querySelector('.sign_up .status_message');
+const status_message = document.querySelectorAll('.sign_up .status_message');
 const login_here = document.querySelector('.login_option button');
 const sign_up_page = document.querySelector('.sign_up');
 const back_to_admin = document.querySelector('.sign_up .back_to_admin');
@@ -12,7 +14,7 @@ const admin_chamber = document.querySelector('.admin_panel_container');
 const check_passwords = (color, mode) => {
     signup_inputs[2].style.border = `1px solid ${color}`;
     signup_inputs[3].style.border = `1px solid ${color}`;
-    status_message.hidden = mode;
+    status_message[0].hidden = mode;
 }
 
 // scanning inputs for validity
@@ -29,7 +31,7 @@ const check_validity = () => {
         // checking if passwords match
         if (signup_inputs[3].value !== '' && signup_inputs[2].value !== signup_inputs[3].value) {
             check_passwords('red', false)
-            status_message.textContent = 'Passwords do not match!';
+            status_message[0].textContent = 'Passwords do not match!';
         } else {
             check_passwords('rgb(92, 137, 233)', true)
         }
@@ -56,15 +58,14 @@ const save_user_data = async () => {
         console.log(data);
 
         if (data.message === 'User created') {
-            status_message.hidden = false;
-            status_message.textContent = 'Successfully Registered! Redirecting. . .'
-            setTimeout(() => { switch_pages(); }, 3000);
-            setTimeout(() => { status_message.hidden = true; }, 10000);
+            status_message[1].hidden = false;
+            status_message[1].textContent = 'Successfully Registered! Head back to LogIn.'
+            fetch_users_data();
         } else {
-            status_message.hidden = false;
-            status_message.textContent = 'This email already exists.\nConsider logging in instead.'
-            setTimeout(() => { status_message.hidden = true; }, 10000);
+            status_message[1].hidden = false;
+            status_message[1].textContent = data.message;
         }
+        setTimeout(() => { status_message[1].hidden = true; }, 10000);
         // clear inputs
         signup_form.reset();
     }
