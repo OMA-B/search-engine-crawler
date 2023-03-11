@@ -1,4 +1,4 @@
-import { fetch_csv_file } from "./crawler.js";
+import { fetch_csv_file, check_validity } from "./crawler.js";
 
 // grabbing elements for manipulation
 const login_form = document.querySelector('.log_in form');
@@ -15,18 +15,7 @@ const csv_container = document.querySelector('.csv_container');
 
 
 // scanning inputs for validity
-const check_validity = () => {
-    login_inputs.forEach(input => {
-        if (input.value !== '' && !input.checkValidity()) {
-            input.style.border = '1px solid red';
-        } else if (input.value !== '' && input.checkValidity()) {
-            input.style.border = '1px solid rgb(92, 137, 233)';
-        } else {
-            input.style.border = '1px solid rgb(92, 137, 233)';
-        }
-    })
-}
-setInterval(() => { check_validity() }, 1000);
+setInterval(() => { check_validity(login_inputs) }, 1000);
 
 const show_hide_buttons = (admin_status) => {
     // to display specific buttons for admin and not for other users
@@ -42,14 +31,12 @@ const confirm_user_data = async () => {
     };
 
     // send user data and wait for a confirmation response
-    // console.log(JSON.stringify(user_data));
     const response = await fetch('http://127.0.0.1:5000/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(user_data),
     });
     const data = await response.json();
-    console.log(data);
 
     // if user data exists, take user to crawler's page
     if (user_data.email === data.email) {
@@ -65,11 +52,11 @@ const confirm_user_data = async () => {
         // clear inputs
         login_form.reset();
     } else {
+        // if not, display message to user for incorrect inputs
         status_message.hidden = false;
         status_message.textContent = `${data.message}\nRetry or consider signing up!`;
         setTimeout(() => { status_message.hidden = true; }, 10000);
     }
-    // if not, display "incorrect login details" message to user
 }
 
 // processing form data

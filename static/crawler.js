@@ -7,12 +7,10 @@ const crawling_input_container = document.querySelector('.crawling_input_contain
 const admin_chamber = document.querySelector('.admin_panel_container');
 const csv_link = document.querySelector('.crawling_input_container .csv_link');
 const status_message = document.querySelector('.crawling_input_container .status_message');
-// const login_here = document.querySelector('.login_option button');
-// const sign_up_page = document.querySelector('.sign_up');
 
 // scanning inputs for validity
-const check_validity = () => {
-    crawling_inputs.forEach(input => {
+export const check_validity = (inputs) => {
+    inputs.forEach(input => {
         if (input.value !== '' && !input.checkValidity()) {
             input.style.border = '1px solid red';
         } else if (input.value !== '' && input.checkValidity()) {
@@ -22,7 +20,7 @@ const check_validity = () => {
         }
     })
 }
-setInterval(() => { check_validity() }, 1000);
+setInterval(() => { check_validity(crawling_inputs) }, 1000);
 
 // fetch csv file
 export const fetch_csv_file = async () => {
@@ -52,7 +50,6 @@ const save_user_data = async () => {
             body: JSON.stringify(user_data),
         });
         const data = await response.json();
-        console.log(data);
 
         fetch_csv_file();
 
@@ -102,5 +99,4 @@ const to_admin_chamber = () => {
 // EventListener
 crawling_form.addEventListener('submit', process_form_data);
 bottom_options.children[0].addEventListener('click', to_admin_chamber);
-bottom_options.children[1].addEventListener('click', () => { to_login_page(log_in_page) })
-// login_here.addEventListener('click', switch_pages)
+bottom_options.children[1].addEventListener('click', () => { to_login_page(log_in_page) });

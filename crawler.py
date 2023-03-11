@@ -1,14 +1,10 @@
-import selenium
+import selenium, random, pandas as pd
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
-# from selenium.webdriver.common.action_chains import ActionChains
-import pandas as pd
-
-# driver = webdriver.Remote(command_executor='http://127.0.0.1:5000/', desired_capabilities=webdriver.DesiredCapabilities.CHROME)
 
 def scrape_web(search_engine, URL, input_selector, keyword, search_result_title, next_selector, page_depth_num, max_search_num):
     # set up headless driver
@@ -18,18 +14,16 @@ def scrape_web(search_engine, URL, input_selector, keyword, search_result_title,
     driver = webdriver.Chrome(chrome_options=chrome_options)
     # get the search engine website
     driver.get(url=URL)
-    # assert 'Ask' in driver.title
     wait = WebDriverWait(driver=driver, timeout=120.0)
 
     search_bar = wait.until(EC.presence_of_element_located((input_selector[0], input_selector[1])))
-    # ActionChains(driver=driver).move_to_element(search_bar).send_keys(keyword, Keys.ENTER).perform()
     search_bar.send_keys(keyword, Keys.ENTER)
 
     titles = []
 
     # fetch 100+ results
     if 'duckduckgo' == search_engine:
-        for num in range(max_search_num): # 10 will be replaced with max search number
+        for num in range(max_search_num):
             try:
                 def click_next():
                     next_button = wait.until(EC.presence_of_element_located((next_selector[0], next_selector[1])))
@@ -46,7 +40,7 @@ def scrape_web(search_engine, URL, input_selector, keyword, search_result_title,
 
         titles = [(title.text, title.get_attribute('href')) for title in title_tags]
     else:
-        for num in range(max_search_num): # 10 will be replaced with max search number
+        for num in range(max_search_num):
             try:
                 title_tags = wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, search_result_title)))
             except selenium.common.exceptions.TimeoutException:
@@ -81,10 +75,11 @@ def scrape_web(search_engine, URL, input_selector, keyword, search_result_title,
     
         for character in title_link:
             if character == '/':
-                page_depth += 1 
+                page_depth += 1
 
-        if page_depth_num + 2 == page_depth:
-            required_list.append((title, title_link, page_depth - 2))
+        for num in range(1, page_depth_num + 1):
+            if num + 2 == page_depth:
+                required_list.append((title, title_link, page_depth - 2))
 
     # now store data retrived in a file
     search_result_data = {

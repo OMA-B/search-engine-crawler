@@ -11,52 +11,52 @@ const info = document.querySelector('.admin_panel_container .info');
 
 // fetching users' data
 export const fetch_users_data = async () => {
-    
-    const response = await fetch('http://127.0.0.1:5000/users');
-    const data = await response.json();
-    console.log(data);
+    try {
+        const response = await fetch('http://127.0.0.1:5000/users');
+        const data = await response.json();
 
-    // populating DOM with users' data
-    users_list.textContent = '';
+        // populating DOM with users' data
+        users_list.textContent = '';
 
-    data.forEach(user => {
-        // create elements
-        const username = document.createElement('div');
-        username.classList.add('username');
-        user.admin ? username.textContent = `Username: ${user.username} {ADMIN}🚩` : username.textContent = `Username: ${user.username}`;
-        const email = document.createElement('div');
-        email.classList.add('email');
-        email.textContent = `Email: ${user.email}`;
-        const password = document.createElement('div');
-        password.classList.add('password');
-        password.textContent = `Password: ${user.password}`;
-        const delete_btn = document.createElement('button');
-        delete_btn.classList.add('delete');
-        delete_btn.textContent = `delete user`;
-        const user_body = document.createElement('li');
-        user_body.classList.add('user');
-        // putting them together
-        user_body.append(username, email, password, delete_btn);
-        users_list.appendChild(user_body);
+        data.forEach(user => {
+            // create elements
+            const username = document.createElement('div');
+            username.classList.add('username');
+            user.admin ? username.textContent = `Username: ${user.username} {ADMIN}🚩` : username.textContent = `Username: ${user.username}`;
+            const email = document.createElement('div');
+            email.classList.add('email');
+            email.textContent = `Email: ${user.email}`;
+            const password = document.createElement('div');
+            password.classList.add('password');
+            password.textContent = `Password: ${user.password}`;
+            const delete_btn = document.createElement('button');
+            delete_btn.classList.add('delete');
+            delete_btn.textContent = `delete user`;
+            const user_body = document.createElement('li');
+            user_body.classList.add('user');
+            // putting them together
+            user_body.append(username, email, password, delete_btn);
+            users_list.appendChild(user_body);
 
-        // erase user's account when delete button is clicked
-        delete_btn.addEventListener('click', async () => {
-            const user_email = { email: user.email };
-            const response = await fetch('http://127.0.0.1:5000/delete', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(user_email),
+            // erase user's account when delete button is clicked
+            delete_btn.addEventListener('click', async () => {
+                const user_email = { email: user.email };
+                const response = await fetch('http://127.0.0.1:5000/delete', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(user_email),
+                });
+                const reply = await response.json();
+                info.textContent = reply.message;
+                setTimeout(() => { info.textContent = "Click a user's delete button to delete the account." }, 5000);
+
+                fetch_users_data();
             });
-            const reply = await response.json();
-            console.log(reply);
-            info.textContent = reply.message;
-            setTimeout(() => { info.textContent = "Click a user's delete button to delete the account." }, 5000);
-
-            fetch_users_data();
         });
-    });
-
-}
+    } catch (error) {
+        console.log('No user data in database!');
+    };
+};
 
 fetch_users_data();
 
@@ -77,6 +77,6 @@ const to_crawler_page = () => {
 }
 
 // EventListeners
-register_user.addEventListener('click', () => { to_sign_up_or_login_page(sign_up_page) })
-crawler_page.addEventListener('click', to_crawler_page)
-log_out.addEventListener('click', () => { to_sign_up_or_login_page(log_in_page) })
+register_user.addEventListener('click', () => { to_sign_up_or_login_page(sign_up_page) });
+crawler_page.addEventListener('click', to_crawler_page);
+log_out.addEventListener('click', () => { to_sign_up_or_login_page(log_in_page) });

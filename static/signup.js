@@ -1,4 +1,5 @@
 import { fetch_users_data } from "./admin.js";
+import { check_validity } from "./crawler.js";
 
 // grabbing elements for manipulation
 const log_in_page = document.querySelector('.log_in');
@@ -17,27 +18,18 @@ const check_passwords = (color, mode) => {
     status_message[0].hidden = mode;
 }
 
-// scanning inputs for validity
-const check_validity = () => {
-    signup_inputs.forEach(input => {
-        if (input.value !== '' && !input.checkValidity()) {
-            input.style.border = '1px solid red';
-        } else if (input.value !== '' && input.checkValidity()) {
-            input.style.border = '1px solid rgb(92, 137, 233)';
-        } else {
-            input.style.border = '1px solid rgb(92, 137, 233)';
-        }
+setInterval(() => {
+    // scanning inputs for validity
+    check_validity(signup_inputs);
 
-        // checking if passwords match
-        if (signup_inputs[3].value !== '' && signup_inputs[2].value !== signup_inputs[3].value) {
-            check_passwords('red', false)
-            status_message[0].textContent = 'Passwords do not match!';
-        } else {
-            check_passwords('rgb(92, 137, 233)', true)
-        }
-    })
-}
-setInterval(() => { check_validity() }, 1000);
+    // checking if passwords match
+    if (signup_inputs[3].value !== '' && signup_inputs[2].value !== signup_inputs[3].value) {
+        check_passwords('red', false)
+        status_message[0].textContent = 'Passwords do not match!';
+    } else {
+        check_passwords('rgb(92, 137, 233)', true)
+    }
+}, 1000);
 
 // collecting user's data
 const save_user_data = async () => {
@@ -48,14 +40,13 @@ const save_user_data = async () => {
             password: signup_form.confirm_password.value,
         };
 
-        // console.log(JSON.stringify(user_data));
+        // sending user's data to backend
         const response = await fetch('http://127.0.0.1:5000/signup', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(user_data),
         });
         const data = await response.json();
-        console.log(data);
 
         if (data.message === 'User created') {
             status_message[1].hidden = false;
@@ -76,7 +67,7 @@ const process_form_data = (e) => {
     // to prevent form from refreshing after submitting
     e.preventDefault();
 
-    check_validity()
+    check_validity(signup_inputs);
 
     // save user data
     save_user_data();

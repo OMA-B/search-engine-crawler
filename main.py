@@ -1,10 +1,7 @@
-import random
 from flask import Flask, request, jsonify,render_template, send_file,send_from_directory
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import inspect
-# from werkzeug.serving import run_with_reloader
-
 from crawler import run_crawler
 
 
@@ -35,13 +32,6 @@ class User(db.Model):
 
 	def __repr__(self) -> str:
 		return '<User %r>' % self.admin
-# with app.app_context():
-# 	print(User.query.all(),'!')
-# 	use=User.query.filter_by(id=2).first()
-# 	# use.admin=True
-# 	db.session.commit()
-# 	print(User.query.all(),'@')
-
 
 @app.route('/signup', methods=['POST'])
 def create_user():
@@ -162,4 +152,4 @@ def download_csv():
     return send_file(filename, as_attachment=True)
 
 if __name__ == '__main__':
-	app.run(debug=True)
+	app.run()
