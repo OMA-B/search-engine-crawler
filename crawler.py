@@ -14,7 +14,7 @@ def scrape_web(search_engine, URL, input_selector, keyword, search_result_title,
     driver = webdriver.Chrome(chrome_options=chrome_options)
     # get the search engine website
     driver.get(url=URL)
-    wait = WebDriverWait(driver=driver, timeout=120.0)
+    wait = WebDriverWait(driver=driver, timeout=60.0)
 
     search_bar = wait.until(EC.presence_of_element_located((input_selector[0], input_selector[1])))
     search_bar.send_keys(keyword, Keys.ENTER)
@@ -97,65 +97,19 @@ def scrape_web(search_engine, URL, input_selector, keyword, search_result_title,
 def run_crawler(search_engine_name, search_phrase, page_depth_num, max_search_num):
     # search engines dictionary for reference to be able get respective data
     search_engines = {
-        'google': ('https://www.google.com/', [By.NAME, 'q'], '.yuRUbf a h3', [By.LINK_TEXT, 'Next']),
+        'searx': ('https://searx.thegpm.org/', [By.CSS_SELECTOR, '.input-lg'], '.result_header a', [By.CSS_SELECTOR, '.pull-right .btn']),
         'yahoo': ('https://search.yahoo.com/', [By.CSS_SELECTOR, '#yschsp'], '.relsrch .title a', [By.LINK_TEXT, 'Next']),
         'bing': ('https://www.bing.com/', [By.CSS_SELECTOR, '#sb_form_q'], 'h2 a', [By.CSS_SELECTOR, 'a.sb_pagN_bp.sb_bp']),
         'duckduckgo': ('https://duckduckgo.com/', [By.CSS_SELECTOR, '#search_form_input_homepage'], 'h2 a', [By.LINK_TEXT, 'More Results']),
-        'yandex': ('https://yandex.com/', [By.CSS_SELECTOR, '.input__input'], '.organic__title-wrapper a', [By.LINK_TEXT, 'next']),
-        'dogpile': ('https://www.dogpile.com/', [By.CSS_SELECTOR, '.search-form-home__q'], '.web-bing__title', [By.LINK_TEXT, 'Next']),
-        'ask': ('https://www.ask.com/', [By.CSS_SELECTOR, '.search-box'], '.result-link', [By.LINK_TEXT, 'Next']),
+        'gigablast': ('https://gigablast.com/', [By.CSS_SELECTOR, 'input#q'], '.result .title', [By.LINK_TEXT, 'Next 25 Results']),
+        'lycos': ('https://www.lycos.com/', [By.CSS_SELECTOR, '.search-input'], '.result-title a', [By.LINK_TEXT, 'Next']),
+        'aol': ('https://www.aol.com/', [By.CSS_SELECTOR, '#header-form-search-input'], '.searchCenterMiddle h3.title a', [By.LINK_TEXT, 'Next']),
     }
 
     search_engine = search_engine_name
     keyword = search_phrase
     page_depth_number = int(page_depth_num)
-    max_search_number = int(max_search_num)
+    max_search_number = int(int(max_search_num)/10)
 
     requirements = search_engines[search_engine]
     scrape_web(search_engine=search_engine, URL=requirements[0], input_selector=requirements[1], keyword=keyword, search_result_title=requirements[2], next_selector=requirements[3], page_depth_num=page_depth_number, max_search_num=max_search_number)
-
-# testing
-# run_crawler(search_engine_name='bing', search_phrase="international women day", page_depth_num=3, max_search_num=10)
-
-
-# for google // captcha issue
-# get the search engine website
-# driver.get(url='https://www.google.com/')
-
-# time.sleep(5)
-# search_bar = driver.find_element(By.NAME, 'q')
-# search_bar.send_keys('hakuna matata', Keys.ENTER)
-
-# # link = driver.find_element(By.CSS_SELECTOR, '.yuRUbf a')
-# title = driver.find_element(By.CSS_SELECTOR, '.yuRUbf a h3')
-
-# # print(link.text)
-# print(title.text)
-
-# for yandex //captcha issue
-# get the search engine website
-# driver.get(url='https://yandex.com/')
-
-# # time.sleep(5)
-# search_bar = driver.find_element(By.CSS_SELECTOR, '.input__input')
-# search_bar.send_keys('hakuna matata', Keys.ENTER)
-
-# # link = driver.find_element(By.CSS_SELECTOR, '.relsrch .title a')
-# title = driver.find_element(By.CSS_SELECTOR, '.organic__title-wrapper a')
-
-# print(title.get_attribute('href'))
-# print(title.text)
-
-# for dogpile //captcha issues
-# get the search engine website
-# driver.get(url='https://www.dogpile.com/')
-
-# time.sleep(60)
-# search_bar = driver.find_element(By.CSS_SELECTOR, '.search-form-home__q')
-# search_bar.send_keys('hakuna matata', Keys.ENTER)
-
-# # link = driver.find_element(By.CSS_SELECTOR, '.relsrch .title a')
-# title = driver.find_element(By.CSS_SELECTOR, '.web-bing__title')
-
-# print(title.get_attribute('href'))
-# print(title.text)

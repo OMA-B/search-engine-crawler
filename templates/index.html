@@ -80,18 +80,18 @@
             <div class="search_engine_container">
                 <label for="search_engine_selection">Select an engine to search on:</label>
                 <select name="search_engine_selection" id="search_engine_selection" class="engine_options" required>
-                    <!-- <option value="google" selected>Google Search</option> -->
-                    <option value="yahoo">Yahoo Search</option>
-                    <option value="bing">Microsoft Bing</option>
-                    <!-- <option value="yandex">Yandex</option> -->
+                    <!-- <option value="searx">SearX</option> -->
+                    <option value="yahoo" selected>Yahoo Search</option>
+                    <option value="gigablast">GigaBlast</option>
+                    <option value="lycos">LYCOS</option>
+                    <option value="aol">AOL</option>
                     <option value="duckduckgo">DuckDuckGo</option>
-                    <!-- <option value="dogpile">DogPile</option> -->
-                    <option value="ask">Ask</option>
+                    <option value="bing">Microsoft Bing</option>
                 </select>
             </div>
             <input type="text" name="keyword" id="keyword" placeholder="Enter Keyword Phrase to search. . ." required>
             <input type="number" name="page_depth" id="page_depth" placeholder="Enter Page Depth Number. . ." min="1" max="10" required>
-            <input type="number" name="max_search_number" id="max_search_number" placeholder="Enter maximum number of search. . ." min="1" max="500" required>
+            <input type="number" name="max_search_number" id="max_search_number" placeholder="Enter maximum number of search. . ." min="1" max="1000" required>
             <input type="submit" value="START" id="button">
         </form>
         <!-- message to update user for patience -->
