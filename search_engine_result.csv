@@ -1,42 +1,176 @@
 ,Search Engine,Keyword Phrase,Site Title,Site Url,Page Depth Number
-0,aol,stem,"Science, Technology, Engineering, and Math, including ...",https://www.ed.gov/stem,1
-1,aol,stem,Stem - Image Results,https://search.aol.com/aol/image?q=stem&v_t=comsearch,2
-2,aol,stem,Welcome to Steam,https://store.steampowered.com/,1
-3,aol,stem,"Science, technology, engineering, and mathematics - Wikipedia","https://en.wikipedia.org/wiki/Science,_technology,_engineering,_and_mathematics",2
-4,aol,stem,Videos for Stem,https://search.aol.com/aol/video?q=stem&v_t=comsearch,2
-5,aol,stem,"STEM | Description, Development, & Facts | Britannica",https://www.britannica.com/topic/STEM-education,2
-6,aol,stem,What Is STEM? - Definition & Resources for Teachers,https://www.weareteachers.com/what-is-stem/,2
-7,aol,stem,What Is STEM (Science Technology Engineering Math)? - Lifewire,https://www.lifewire.com/what-is-stem-4150175,1
-8,aol,stem,Games - Steam,https://store.steampowered.com/games/,2
-9,aol,stem,"What Does STEM Stand For? Definition, Degrees and More",https://www.phoenix.edu/blog/what-does-stem-stand-for--definition--degrees-and-more.html,2
-10,aol,stem,What is STEM Education? | Live Science,https://www.livescience.com/43296-what-is-stem-education.html,1
-11,aol,stem,STEM Skills & Lessons for the Classroom | Microsoft Education,https://www.microsoft.com/en-us/education/educators/stem,4
-12,aol,stem,What to Know About STEM Public High Schools - US News & World ...,https://www.usnews.com/education/k12/articles/what-to-know-about-stem-public-high-schools,4
-13,aol,stem,What Is a STEM Degree? And What Can You Do With One?,https://www.coursera.org/articles/stem-degree,2
-14,aol,stem,What Is STEM and Why Is It Important? | BestColleges,https://www.bestcolleges.com/blog/what-is-stem/,3
-15,aol,stem,STEM Meaning & Definition: What is STEM? - Create & Learn,https://www.create-learn.us/blog/stem-meaning-and-definition/,3
-16,aol,stem,STEM Curriculum & Programs For K-12 | Discovery Education,https://www.discoveryeducation.com/programs/stem/,3
-17,aol,stem,"Stem, Inc. (STEM) Stock Price, News, Quote & History - Yahoo!",https://finance.yahoo.com/quote/STEM?fr=sycsrp_catchall,2
-18,aol,stem,STEM Skills & Lessons for the Classroom | Microsoft Education,https://www.microsoft.com/en-us/education/educators/stem,4
-19,aol,stem,What Is a STEM Degree? And What Can You Do With One?,https://www.coursera.org/articles/stem-degree,2
-20,aol,stem,What Is STEM? What Does It Stand For? - PrepScholar,https://blog.prepscholar.com/what-is-stem,1
-21,aol,stem,What Is STEM and Why Is It Important? | BestColleges,https://www.bestcolleges.com/blog/what-is-stem/,3
-22,aol,stem,What is STEM education? | Britannica,https://www.britannica.com/video/193418/overview-STEM-education,3
-23,aol,stem,What Is a STEM Degree? And What Can You Do With One?,https://www.coursera.org/articles/stem-degree,2
-24,aol,stem,What Is STEM? What Does It Stand For? - PrepScholar,https://blog.prepscholar.com/what-is-stem,1
-25,aol,stem,What is STEM education? | Britannica,https://www.britannica.com/video/193418/overview-STEM-education,3
-26,aol,stem,STEM Activities for Kids (481 results) - Science Buddies,https://www.sciencebuddies.org/stem-activities,1
-27,aol,stem,STEM Curriculum & Programs For K-12 | Discovery Education,https://www.discoveryeducation.com/programs/stem/,3
-28,aol,stem,Stem Definition & Meaning - Merriam-Webster,https://www.merriam-webster.com/dictionary/stem,2
-29,aol,stem,The Difference of STEM vs. STEAM - Verywell Family,https://www.verywellfamily.com/stem-vs-steam-what-is-the-difference-2601549,1
-30,aol,stem,STEM Skills - What You Need To Know | STEMcadia,https://stemcadia.com/stem-skills/,2
-31,aol,stem,Afterschool Alliance,https://www.afterschoolalliance.org/STEM-curriculum.cfm,1
-32,aol,stem,What Is a STEM Degree? And What Can You Do With One?,https://www.coursera.org/articles/stem-degree,2
-33,aol,stem,"The STEM Labor Force of Today: Scientists, Engineers, and ...",https://ncses.nsf.gov/pubs/nsb20212,2
-34,aol,stem,What Is STEM? What Does It Stand For? - PrepScholar,https://blog.prepscholar.com/what-is-stem,1
-35,aol,stem,STEM Curriculum & Programs For K-12 | Discovery Education,https://www.discoveryeducation.com/programs/stem/,3
-36,aol,stem,Stem Definition & Meaning - Merriam-Webster,https://www.merriam-webster.com/dictionary/stem,2
-37,aol,stem,2022 Best STEM High Schools in America - US News,https://www.usnews.com/education/best-high-schools/national-rankings/stem,4
-38,aol,stem,Engaging Preschoolers in STEM: It’s Easier Than You Think!,https://dreme.stanford.edu/news/engaging-preschoolers-stem-it-s-easier-you-think,2
-39,aol,stem,STEM Skills - What You Need To Know | STEMcadia,https://stemcadia.com/stem-skills/,2
-40,aol,stem,Afterschool Alliance,https://www.afterschoolalliance.org/STEM-curriculum.cfm,1
+0,duckduckgo,stem,"Science, Technology, Engineering, and Math, including Computer Science - ed",https://www.ed.gov/stem,1
+1,duckduckgo,stem,What Is STEM? - Definition & Resources for Teachers,https://www.weareteachers.com/what-is-stem/,2
+2,duckduckgo,stem,"STEM | Description, Development, & Facts | Britannica",https://www.britannica.com/topic/STEM-education,2
+3,duckduckgo,stem,"What Does STEM Stand For? Definition, Degrees and More",https://www.phoenix.edu/blog/what-does-stem-stand-for--definition--degrees-and-more.html,2
+4,duckduckgo,stem,What Is STEM (Science Technology Engineering Math)? - Lifewire,https://www.lifewire.com/what-is-stem-4150175,1
+5,duckduckgo,stem,Stem | Global Leader in AI-driven Clean Energy Solutions & Services,https://www.stem.com/,1
+6,duckduckgo,stem,"STEM (Science, Technology, Engineering and Math) - web",https://www.schools.nyc.gov/learning/subjects/stem,3
+7,duckduckgo,stem,Stem Definition & Meaning - Merriam-Webster,https://www.merriam-webster.com/dictionary/stem,2
+8,duckduckgo,stem,DOE STEM | Department of Energy,https://www.energy.gov/doe-stem/doe-stem,2
+9,duckduckgo,stem,"Stem, Inc. (STEM) Stock Price, News, Quote & History - Yahoo!",https://finance.yahoo.com/quote/STEM,2
+10,duckduckgo,stem,STEM.org - Educational Research & Credentialing Est. 2001,https://stem.org/,1
+11,duckduckgo,stem,What is STEM? - Department of Education,https://www.education.wa.edu.au/what-is-stem,1
+12,duckduckgo,stem,What Is STEM and Why Is It Important? | BestColleges,https://www.bestcolleges.com/blog/what-is-stem/,3
+13,duckduckgo,stem,Stem - HEC & PIEAS Joint Venture,http://stem.pieas.edu.pk/,1
+14,duckduckgo,stem,STEM Learning,https://www.stem.org.uk/,1
+15,duckduckgo,stem,What is STEM Education? | Live Science,https://www.livescience.com/43296-what-is-stem-education.html,1
+16,duckduckgo,stem,Stem Inc. - Investor Relations,https://investors.stem.com/overview/default.aspx,2
+17,duckduckgo,stem,Certified - STEM.org,https://stem.org/certified/,2
+18,duckduckgo,stem,STEM at CDC - Centers for Disease Control and Prevention,https://www.cdc.gov/stem/index.html,2
+19,duckduckgo,stem,¿Qué es educación STEM? - stemeducol,https://www.stemeducol.com/que-es-stem,1
+20,duckduckgo,stem,"What Is STEM? A Guide To Subjects, Education Theory & Benefits",https://research.com/education/what-is-stem,2
+21,duckduckgo,stem,STEM Meaning & Definition: What is STEM? - Create & Learn,https://www.create-learn.us/blog/stem-meaning-and-definition/,3
+22,duckduckgo,stem,"Science, Technology, Engineering, and Mathematics Education (STEM ...",https://tea.texas.gov/academics/college-career-and-military-prep/science-technology-engineering-and-mathematics-education-stem,3
+23,duckduckgo,stem,"STEM (science, technology, engineering, and mathematics) - WhatIs.com",https://www.techtarget.com/whatis/definition/STEM-science-technology-engineering-and-mathematics,3
+24,duckduckgo,stem,STEM | Bug killers and repellents that scientifically decode mother ...,https://stemforbugs.com/,1
+25,duckduckgo,stem,"STEM's racial, ethnic and gender gaps are still strikingly large",https://www.sciencenews.org/article/science-technology-math-race-ethnicity-gender-diversity-gap,2
+26,duckduckgo,stem,STEM Majors: How to Choose the Right Degree - ThoughtCo,https://www.thoughtco.com/stem-majors-degrees-careers-4174455,1
+27,duckduckgo,stem,What Is STEM? What Does It Stand For? - PrepScholar,https://blog.prepscholar.com/what-is-stem,1
+28,duckduckgo,stem,Engaging Preschoolers in STEM: It's Easier Than You Think!,https://dreme.stanford.edu/news/engaging-preschoolers-stem-it-s-easier-you-think,2
+29,duckduckgo,stem,Afterschool Alliance,https://www.afterschoolalliance.org/STEM-curriculum.cfm,1
+30,duckduckgo,stem,"Texas Science, Technology, Engineering and Mathematics Initiative (T-STEM)",https://tea.texas.gov/academics/college-career-and-military-prep/texas-science-technology-engineering-and-mathematics-initiative-t-stem,3
+31,duckduckgo,stem,Stems and Multitracks: What's the Difference? - iZotope,https://www.izotope.com/en/learn/stems-and-multitracks-whats-the-difference.html,3
+32,duckduckgo,stem,Contact Stem | Leader in Smart Energy Storage,https://www.stem.com/contact-us/,2
+33,duckduckgo,stem,"Defining STEM in Education - Science, Technology, Engineering and ...",https://www.invent.org/blog/trends-stem/stem-define,3
+34,duckduckgo,stem,Public Health in STEM Education - Centers for Disease Control and ...,https://www.cdc.gov/stem/education/stem_in_public_health.html,3
+35,duckduckgo,stem,Explainer: what's the difference between STEM and STEAM?,https://theconversation.com/explainer-whats-the-difference-between-stem-and-steam-95713,1
+36,duckduckgo,stem,The Difference of STEM vs. STEAM - Verywell Family,https://www.verywellfamily.com/stem-vs-steam-what-is-the-difference-2601549,1
+37,duckduckgo,stem,100+ Exciting STEM Careers (and the Highest-Paying Science Jobs),https://blog.prepscholar.com/stem-careers,1
+38,duckduckgo,stem,100 Fantastic STEM Projects for Kids - Little Bins for Little Hands,https://littlebinsforlittlehands.com/stem-projects-for-kids/,2
+39,duckduckgo,stem,What Is STEM? | STEM Strategies,https://stem.ucdavis.edu/what-stem,1
+40,duckduckgo,stem,World's Leading AI Energy Storage Solution | Stem Athena,https://www.stem.com/solutions/athena/,3
+41,duckduckgo,stem,STEM Activities for Kids (481 results) - Science Buddies,https://www.sciencebuddies.org/stem-activities,1
+42,duckduckgo,stem,What Does STEM Stand for in Business & Education? - iD Tech,https://www.idtech.com/blog/definition-of-stem-but-is-stem-defined,2
+43,duckduckgo,stem,STEM Education Teaching and Learning | NSTA,https://www.nsta.org/nstas-official-positions/stem-education-teaching-and-learning,2
+44,duckduckgo,stem,What Are Cancer Stem Cells? - Verywell Health,https://www.verywellhealth.com/cancer-stem-cells-5096752,1
+45,duckduckgo,stem,Benefits of a STEM degree - Carey Business School,https://carey.jhu.edu/articles/story/benefits-stem-degree,3
+46,duckduckgo,stem,"What Is STEM? (And STEAM, and STREAM?) - Niche Blog",https://www.niche.com/blog/stem-vs-steam-vs-stream/,3
+47,duckduckgo,stem,Learn STEM With Online Courses and Programs | edX,https://www.edx.org/learn/stem,2
+48,duckduckgo,stem,STEM FROM SOMETHING | English meaning - Cambridge Dictionary,https://dictionary.cambridge.org/dictionary/english/stem-from,3
+49,duckduckgo,stem,"STEM: 3 Energy Storage Stocks That Will Skyrocket, According to Wall ...",https://stocknews.com/news/stem-flnc-eose-3-energy-storage-stocks-that-will-skyrocket-according-to-wall/,3
+50,duckduckgo,stem,"STEM Courses in USA, UK, Canada, India & Online 2023 - Leverage Edu",https://leverageedu.com/blog/stem-courses/,3
+51,duckduckgo,stem,"Stem, Inc. (STEM) Stock Price Today, Quote & News",https://seekingalpha.com/symbol/STEM,2
+52,duckduckgo,stem,Ultimate Guide to STEM Activities - With over 100 activity ideas!,https://www.steampoweredfamily.com/stem-activities/,2
+53,duckduckgo,stem,Stem Inc (STEM) Stock Price & News - Google Finance,https://www.google.com/finance/quote/STEM:NYSE,3
+54,duckduckgo,stem,STEM - What does STEM stand for? The Free Dictionary,https://acronyms.thefreedictionary.com/STEM,1
+55,duckduckgo,stem,STEM OPT Extension Overview | Study in the States - DHS,https://studyinthestates.dhs.gov/stem-opt-hub/additional-resources/stem-opt-extension-overview,3
+56,duckduckgo,stem,Stem Definition & Meaning | Dictionary.com,https://www.dictionary.com/browse/stem,2
+57,duckduckgo,stem,Stem - definition of stem by The Free Dictionary,https://www.thefreedictionary.com/stem,1
+58,duckduckgo,stem,STEM Scholarships - Unigo.com,https://www.unigo.com/scholarships/by-major/stem-scholarships,3
+59,duckduckgo,stem,"The STEM Labor Force of Today: Scientists, Engineers, and Skilled ...",https://ncses.nsf.gov/pubs/nsb20212,2
+60,duckduckgo,stem,"Women in Science, Technology, Engineering, and Mathematics (STEM ...",https://www.catalyst.org/research/women-in-science-technology-engineering-and-mathematics-stem/,3
+61,duckduckgo,stem,Why is STEM important in Early Childhood Education? Understanding Child ...,https://soeonline.american.edu/blog/stem-in-early-childhood-education/,3
+62,duckduckgo,stem,"Making sense of ""STEM education"" in K-12 contexts",https://stemeducationjournal.springeropen.com/articles/10.1186/s40594-018-0127-2,3
+63,duckduckgo,stem,100+ STEM Activities for Kids that Will Foster a ... - STEAMsational,https://www.steamsational.com/stem-activities-for-kids/,2
+64,duckduckgo,stem,41+ Surprising STEAM Activities for Elementary Kids,https://hessunacademy.com/steam-activities-elementary-kids/,2
+65,duckduckgo,stem,STEM | Graduate Programs - University of Connecticut,https://grad.business.uconn.edu/stem/,2
+66,duckduckgo,stem,What's a STEM MBA and Why Is It So Popular? | MBA.com,https://www.mba.com/explore-programs/choose-and-compare-programs/whats-a-stem-mba-and-why-is-it-so-popular,3
+67,duckduckgo,stem,What is STEM? A guide for parents and educators - STEAM Powered Family,https://www.steampoweredfamily.com/what-is-stem/,2
+68,duckduckgo,stem,What is STEM Education? STEM Education Guide | Study.com,https://study.com/teach/stem-education.html,2
+69,duckduckgo,stem,What is STEM? The Meaning of an Acronym You'll Hear a Lot in School,https://www.freecodecamp.org/news/what-is-stem-the-meaning-of-an-acronym-youll-hear-a-lot-in-school/,3
+70,duckduckgo,stem,Explore the Top Careers in STEM - LearnHowToBecome.org,https://www.learnhowtobecome.org/career-resource-center/careers-in-stem/,3
+71,duckduckgo,stem,STEM vs. Humanities: Do What You Love | STEMcadia,https://stemcadia.com/stem-vs-humanities/,2
+72,duckduckgo,stem,76 Synonyms & Antonyms of STEM | Merriam-Webster Thesaurus,https://www.merriam-webster.com/thesaurus/stem,2
+73,duckduckgo,stem,STEM Education: Strategies and Approaches for Teaching - 2215 Words ...,https://ivypanda.com/essays/stem-education-strategies-and-approaches-for-teaching/,3
+74,duckduckgo,stem,What Does STEM Stand For? | STEM Meaning & Definition - CodeWizardsHQ,https://www.codewizardshq.com/stem-meaning/,2
+75,duckduckgo,stem,What is a STEM Major? - College Board Blog,https://blog.collegeboard.org/what-stem-major,1
+76,duckduckgo,stem,"Stem cells: Therapy, controversy, and research - Medical News Today",https://www.medicalnewstoday.com/articles/200904,2
+77,duckduckgo,stem,Creative STEM Activities for Kids: 31 Ideas To Try Right Now!,https://www.steamsational.com/31-days-stem-activities-kids/,2
+78,duckduckgo,stem,Function Reference: stem - SourceForge,https://octave.sourceforge.io/octave/function/stem.html,3
+79,duckduckgo,stem,8 Reasons Why STEM Education Is Important (2021),https://www.embassy.education/8-reasons-why-stem-education-is-important/,2
+80,duckduckgo,stem,The Ultimate STEM Guide for Kids: 239 Cool Sites - CORP-MIDS1 (MDS),https://www.mastersindatascience.org/resources/the-ultimate-stem-guide-for-kids-239-cool-sites-about-science-technology-engineering-and-math/,3
+81,duckduckgo,stem,Mayo Clinic Q and A: Stem cell therapy for arthritis,https://newsnetwork.mayoclinic.org/discussion/mayo-clinic-q-and-a-stem-cell-therapy-for-arthritis/,3
+82,duckduckgo,stem,Stem Cells | Oxford Academic,https://academic.oup.com/stmcls,1
+83,duckduckgo,stem,Stem | Naeyc,https://www.naeyc.org/resources/topics/stem,3
+84,duckduckgo,stem,Stem Cells: MedlinePlus,https://medlineplus.gov/stemcells.html,1
+85,duckduckgo,stem,"SVB, Signature Bank Depositors to Get All Their Money as Fed Moves to ...",https://www.wsj.com/articles/federal-reserve-rolls-out-emergency-measures-to-prevent-banking-crisis-ba4d7f98,2
+86,duckduckgo,stem,Amazon.com: Stem Toys,https://www.amazon.com/stem-toys/s?k=stem+toys,2
+87,duckduckgo,stem,"What is STEM: All about the STEM Degree, Subjects, Eligibility ...",https://yocket.com/blog/all-about-stem-courses,2
+88,duckduckgo,stem,Regulators Face Urgent Task to Stem Spread From Silicon Valley Bank,https://www.wsj.com/articles/silicon-valley-bank-fallout-poses-new-risks-for-markets-fed-81d1617a,2
+89,duckduckgo,stem,FAQ's About STEM - Playground Ideas Playground Ideas,https://playgroundideas.org/faqs-about-stem/,2
+90,duckduckgo,stem,Stem Announces Minimal Exposure to Silicon Valley Bank,https://finance.yahoo.com/news/stem-announces-minimal-exposure-silicon-010000542.html,2
+91,duckduckgo,stem,How Stem Cells Are Reshaping Modern Medicine - Men's Journal,https://www.mensjournal.com/health-fitness/how-stem-cells-reshaping-medicine,2
+92,duckduckgo,stem,"US, UK try to stem fallout from Silicon Valley Bank collapse",https://abc13.com/silicon-valley-bank-collapse-svb-banking-crisis/12948753/,3
+93,duckduckgo,stem,"Umbilical Cord ""Stem Cells"", Harry Aldeson, and the Business of ...",https://regenexx.com/blog/umbilical-cord-stem-cells-and-harry-aldeson/,3
+94,duckduckgo,stem,Free STEM Lesson Plans for K-12 Teachers - ORISE,https://orise.orau.gov/resources/k12/lesson-plans.html,3
+95,duckduckgo,stem,What is a STEM education program? | College of Education,https://education.fsu.edu/what-stem-education-program,1
+96,duckduckgo,stem,STEM Outreach and Engagement | Department of Energy,https://www.energy.gov/diversity/stem-outreach-and-engagement,2
+97,duckduckgo,stem,Your Guide to 15 of the Highest-Paying STEM Jobs | Indeed.com,https://www.indeed.com/career-advice/finding-a-job/highest-paying-stem-jobs,3
+98,duckduckgo,stem,Best STEM Schools - Top 500 - Newsweek,https://www.newsweek.com/americas-best-stem-high-schools-2020,1
+99,duckduckgo,stem,STEM Skills - What You Need To Know | STEMcadia,https://stemcadia.com/stem-skills/,2
+100,duckduckgo,stem,Stem Casters | McMaster-Carr,https://www.mcmaster.com/casters/mount-type~stem/,3
+101,duckduckgo,stem,STEM (SCANNING TRANSMISSION ELECTRON MICROSCOPY) - IMC - The University ...,https://www.memphis.edu/imc/microscopy/stem.php,3
+102,duckduckgo,stem,Best Summer Programs for STEM - College Transitions,https://www.collegetransitions.com/dataverse/summer-programs-stem,2
+103,duckduckgo,stem,"The STEM Labor Force of Today: Scientists, Engineers, and Skilled ...",https://ncses.nsf.gov/pubs/nsb20212/stem-labor-market-conditions-and-the-economy,3
+104,duckduckgo,stem,"STEM Careers: 2023 Guide to Career Paths, Options & Salary",https://research.com/careers/stem-careers,2
+105,duckduckgo,stem,STEM Education Defined | STEM Education Research Center | SIU,https://stemedresearch.siu.edu/what-is-stem-education/,2
+106,duckduckgo,stem,STEM Careers | BestColleges,https://www.bestcolleges.com/careers/stem/,3
+107,duckduckgo,stem,The Best Places To Find Stems For Your Set - DJBooth,https://djbooth.net/pro-audio/the-best-places-to-find-stems-for-your-set,2
+108,duckduckgo,stem,"Science, Technology, Engineering, and Math (STEM) Careers",https://careerwise.minnstate.edu/careers/stemcareers,2
+109,duckduckgo,stem,Stem (bicycle part) - Wikipedia,https://en.wikipedia.org/wiki/Stem_%28bicycle_part%29,2
+110,duckduckgo,stem,What is STEM Education? | Concept & Purposes - Study.com,https://study.com/academy/lesson/what-is-stem-education-definition-importance-standards.html,3
+111,duckduckgo,stem,How Art Motivates STEM Learning - naaweb.org,https://naaweb.org/professional-development/item/568-full-steam-ahead,3
+112,duckduckgo,stem,Stem Cell Reviews and Reports | Home,https://www.springer.com/journal/12015,2
+113,duckduckgo,stem,"The Plant Stem, Functions, Parts, and Classifications - Crops Review",https://www.cropsreview.com/plant-stem/,2
+114,duckduckgo,stem,STEM Activities For Kindergarten - Little Bins for Little Hands,https://littlebinsforlittlehands.com/stem-for-kindergarten/,2
+115,duckduckgo,stem,MDA - MDA STEM Outreach - Missile Defense Agency,https://www.mda.mil/about/STEMoutreach.html,2
+116,duckduckgo,stem,STEM (@stem_feed) / Twitter,https://twitter.com/stem_feed,1
+117,duckduckgo,stem,Fed Unveils Massive Loan Plan To Stem Contagion From SVB Collapse ...,https://www.thestreet.com/markets/fed-unveils-massive-loan-plan-to-stem-contagion-from-svb-collapse,2
+118,duckduckgo,stem,Stem Cell - The Definitive Guide | Biology Dictionary,https://biologydictionary.net/stem-cell/,2
+119,duckduckgo,stem,STEM Courses in USA for International Students 2021 - Leverage Edu,https://leverageedu.com/blog/stem-courses-in-usa/,3
+120,duckduckgo,stem,The Best STEM Activities for Kindergarten - Happy Teacher Mama,https://www.happyteachermama.com/the-best-stem-activities-for-kindergarten/,2
+121,duckduckgo,stem,President Biden tells US to have confidence in banks after Silicon ...,https://www.chicagotribune.com/nation-world/ct-aud-nw-silicon-valley-bank-collapse-20230313-rlb3gkqxnncsdmehlzzbsinliy-story.html,2
+122,duckduckgo,stem,Stem cell injection slashes risk of heart attack or stroke by 58%,https://www.freethink.com/health/stem-cells-heart-failure,2
+123,duckduckgo,stem,"Science, Technology, Engineering, and Mathematics (STEM)",https://ies.ed.gov/topics/stem.asp,2
+124,duckduckgo,stem,Journal for STEM Education Research | Home - Springer,https://www.springer.com/journal/41979,2
+125,duckduckgo,stem,10+ Best STEM Projects for Kids in 2021 | Sphero,https://sphero.com/blogs/news/stem-projects,3
+126,duckduckgo,stem,The 50 Top Women In STEM - TheBestSchools.org,https://thebestschools.org/magazine/women-in-stem/,3
+127,duckduckgo,stem,STEM Activities & Kits | hand2mind,https://www.hand2mind.com/products/stem,2
+128,duckduckgo,stem,VirtualDJ - Real-Time Stems Separation,https://virtualdj.com/stems/,2
+129,duckduckgo,stem,Stem Lesbian - What is it? What does it mean? - Taimi wiki,https://taimi.com/wiki/stem-lesbian-what-is-it-what-does-it-mean,2
+130,duckduckgo,stem,20 Elementary STEM Science Projects - Teach Beside Me,https://teachbesideme.com/elementary-stem-science/,2
+131,duckduckgo,stem,STEM Classrooms and Kids with Special Needs - MiddleWeb,https://www.middleweb.com/28082/stem-classes-and-kids-with-special-needs/,3
+132,duckduckgo,stem,STEM Curriculum Elementary | PLTW,https://www.pltw.org/stem-curriculum-elementary,1
+133,duckduckgo,stem,Stem Inc (STEM) Stock Forecast & Price Target - TipRanks,https://www.tipranks.com/stocks/stem/forecast,3
+134,duckduckgo,stem,An Overview of the Best K-12 STEM Resources - TechGuide,https://techguide.org/resources/k-12-stem-guide/,3
+135,duckduckgo,stem,STEM | LinkedIn,https://www.linkedin.com/company/stem-healthcare/,3
+136,duckduckgo,stem,"You've heard of STEM, but what about SMAC? | TechRadar",https://www.techradar.com/opinion/youve-heard-of-stem-but-what-about-smac,2
+137,duckduckgo,stem,Stem Cell Therapy for Erectile Dysfunction - PubMed,https://pubmed.ncbi.nlm.nih.gov/29631980/,2
+138,duckduckgo,stem,"US, UK try to stem fallout from Silicon Valley Bank collapse",https://abc7chicago.com/silicon-valley-bank-collapse-svb-banking-crisis/12948753/,3
+139,duckduckgo,stem,Cancer survivor meets blood stem cell donor that saved her life,https://www.kristv.com/news/local-news/cancer-survivor-meets-blood-stem-cell-donor-that-saved-her-life,3
+140,duckduckgo,stem,Biden administration faces bipartisan criticism as regulators rush to ...,https://justthenews.com/nation/economy/biden-administration-tries-stave-financial-crisis-second-bank-fails,3
+141,duckduckgo,stem,Droops on the stem Crossword Clue - Try Hard Guides,https://tryhardguides.com/droops-on-the-stem-crossword-clue/,2
+142,duckduckgo,stem,State closes NYC-based bank as regulators seek to stem crisis,https://gothamist.com/news/state-closes-nyc-based-bank-as-regulators-seek-to-stem-crisis,2
+143,duckduckgo,stem,"iFLY Indoor Skydiving hiring STEM Educator ($30/hr) in Tigard, Oregon ...",https://www.linkedin.com/jobs/view/stem-educator-%2430-hr-at-ifly-indoor-skydiving-3496416770,3
+144,duckduckgo,stem,STEM | Edutopia,https://www.edutopia.org/topic/stem,2
+145,duckduckgo,stem,The Rising Popularity of STEM: A Crossroads in Public Education or a ...,https://www.publicschoolreview.com/blog/the-rising-popularity-of-stem-a-crossroads-in-public-education-or-a-passing-trend,2
+146,duckduckgo,stem,Indicator 26: STEM Degrees - National Center for Education Statistics,https://nces.ed.gov/programs/raceindicators/indicator_reg.asp,3
+147,duckduckgo,stem,STEM M.B.A. Program | St. John's University | New York,https://www.stjohns.edu/academics/programs/stem-master-business-administration,3
+148,duckduckgo,stem,STEM Camp: STEM Research Topics - Indian River State College,https://irsc.libguides.com/c.php?g=146688&p=962427,1
+149,duckduckgo,stem,"Brainstem: Anatomy, Function, and Treatment - Verywell Health",https://www.verywellhealth.com/brainstem-anatomy-5095691,1
+150,duckduckgo,stem,Silicon Valley Bank collapse: President Biden tells US to have ...,https://abc7ny.com/silicon-valley-bank-collapse-svb-banking-crisis/12948753/,3
+151,duckduckgo,stem,"Stem cells: Sources, types, and uses - Medical News Today",https://www.medicalnewstoday.com/articles/323343,2
+152,duckduckgo,stem,Stem Cell Biology | NIH Intramural Research Program,https://irp.nih.gov/our-research/scientific-focus-areas/stem-cell-biology,3
+153,duckduckgo,stem,What Is A STEM Degree? | BestValueSchools,https://www.bestvalueschools.com/faq/what-is-a-stem-degree/,3
+154,duckduckgo,stem,How to Use STEM Teaching Tools in Your Classroom,https://www.wgu.edu/heyteach/article/how-use-stem-teaching-tools-your-classroom1703.html,3
+155,duckduckgo,stem,What is STEM Education? - Dr Patricia Fioriello author,https://drpfconsults.com/understanding-the-basics-of-stem-education/,2
+156,duckduckgo,stem,Fed and FDIC discussing backstop to make SVB depositors whole and stem ...,https://www.nbcnews.com/news/us-news/fed-fdic-discussing-backstop-make-svb-depositors-whole-stem-contagion-rcna74557,3
+157,duckduckgo,stem,Myths and Misconceptions About Stem Cell Research,https://www.cirm.ca.gov/patients/myths-and-misconceptions-about-stem-cell-research,2
+158,duckduckgo,stem,"STEM Summer Camps in Connecticut for Science, Coding, and Engineering",https://mommypoppins.com/connecticut-kids/camps/stem-summer-camps-in-connecticut-science-math-and-computer-fun-for-ct-kids,3
+159,duckduckgo,stem,STEM career day hosted at John F. Kennedy Elementary school,https://www.kristv.com/news/local-news/stem-career-day-hosted-at-john-f-kennedy-elementary-school,3
+160,duckduckgo,stem,What Is Stem Education? A Beginner's Guide - LIYSF,https://www.liysf.org.uk/blog/what-is-stem-education,2
+161,duckduckgo,stem,StemSpan™ SFEM Hematopoietic Cell Culture Medium - STEMCELL,https://www.stemcell.com/products/stemspan-sfem.html,2
+162,duckduckgo,stem,"STEM - Stem, Inc. Stock Price and Quote - FINVIZ.com",https://finviz.com/quote.ashx?t=stem,1
+163,duckduckgo,stem,Petal + Stem Swap 9 | During Quiet Time,https://duringquiettime.com/2023/03/petal-stem-swap-9.html,3
+164,duckduckgo,stem,OC STEM Initiative hiring Volunteer: After-school Workshop Volunteer in ...,https://www.linkedin.com/jobs/view/volunteer-after-school-workshop-volunteer-at-oc-stem-initiative-3464643688,3
+165,duckduckgo,stem,STEM Explorers™ MathLink® Builders,https://www.learningresources.com/item-stem-explorerstm-mathlinkr-builders,1
+166,duckduckgo,stem,Sign in to your account | STEM,https://www.stem.org.uk/user?destination=dashboard,1
+167,duckduckgo,stem,Hogwarts Legacy: How to Get Fluxweed Stem - gamerant.com,https://gamerant.com/hogwarts-legacy-how-to-get-fluxweed-stem/,2
+168,duckduckgo,stem,About Stem - Town of Stem,https://www.stemnc.org/about/,2
+169,duckduckgo,stem,Best Elementary STEM Activities For Children | GCU Blog,https://www.gcu.edu/blog/teaching-school-administration/best-elementary-stem-activities,3
+170,duckduckgo,stem,Women in STEM & the Gender Gap | Maryville Online,https://online.maryville.edu/blog/women-in-stem-a-guide-to-bridging-the-gender-gap/,3
+171,duckduckgo,stem,All STEM Occupations - O*NET OnLine,https://www.onetonline.org/find/stem/?t=0,3
+172,duckduckgo,stem,STEAM - The Importance of Art in STEM Education,https://sproutsupplies.com/blog/steam-the-importance-of-art-in-stem-education/,3
+173,duckduckgo,stem,STEM ReCharge Government Funding Announcement - Press Release 11 Feb ...,https://womenreturners.com/stem-recharge-pr-feb2023/,2
+174,duckduckgo,stem,Bank of England rushes to stem SVB damage - afr.com,https://www.afr.com/technology/bofe-rushes-to-stem-svb-damage-20230312-p5crfl,2

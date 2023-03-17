@@ -1,4 +1,4 @@
-import selenium, random, pandas as pd
+import selenium, pandas as pd
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -49,6 +49,8 @@ def scrape_web(search_engine, URL, input_selector, keyword, search_result_title,
             for title in title_tags:
                 if search_engine == 'yahoo':
                     titles.append((title.text.splitlines()[1], title.get_attribute('href')))
+                elif search_engine == 'brave':
+                    titles.append((title.text.splitlines()[0], title.get_attribute('href')))
                 else:
                     titles.append((title.text, title.get_attribute('href')))
 
@@ -97,13 +99,14 @@ def scrape_web(search_engine, URL, input_selector, keyword, search_result_title,
 def run_crawler(search_engine_name, search_phrase, page_depth_num, max_search_num):
     # search engines dictionary for reference to be able get respective data
     search_engines = {
-        'searx': ('https://searx.thegpm.org/', [By.CSS_SELECTOR, '.input-lg'], '.result_header a', [By.CSS_SELECTOR, '.pull-right .btn']),
         'yahoo': ('https://search.yahoo.com/', [By.CSS_SELECTOR, '#yschsp'], '.relsrch .title a', [By.LINK_TEXT, 'Next']),
         'bing': ('https://www.bing.com/', [By.CSS_SELECTOR, '#sb_form_q'], 'h2 a', [By.CSS_SELECTOR, 'a.sb_pagN_bp.sb_bp']),
         'duckduckgo': ('https://duckduckgo.com/', [By.CSS_SELECTOR, '#search_form_input_homepage'], 'h2 a', [By.LINK_TEXT, 'More Results']),
+        'brave': ('https://search.brave.com/', [By.CSS_SELECTOR, '#searchbox'], '.result-header', [By.LINK_TEXT, 'Next']),
         'gigablast': ('https://gigablast.com/', [By.CSS_SELECTOR, 'input#q'], '.result .title', [By.LINK_TEXT, 'Next 25 Results']),
         'lycos': ('https://www.lycos.com/', [By.CSS_SELECTOR, '.search-input'], '.result-title a', [By.LINK_TEXT, 'Next']),
         'aol': ('https://www.aol.com/', [By.CSS_SELECTOR, '#header-form-search-input'], '.searchCenterMiddle h3.title a', [By.LINK_TEXT, 'Next']),
+        'neeva': ('https://neeva.com/', [By.CSS_SELECTOR, '.search-bar_searchInput__X3uLy'], '.lib-doc-title__link-1b9rC', [By.LINK_TEXT, 'Next']),
     }
 
     search_engine = search_engine_name

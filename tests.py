@@ -11,17 +11,18 @@ from selenium.webdriver.chrome.options import Options
 
 driver = webdriver.Chrome()
 
-wait = WebDriverWait(driver=driver, timeout=120.0)
+wait = WebDriverWait(driver=driver, timeout=60.0)
 # for google // captcha issue
 # get the search engine website
-driver.get(url='https://www.lycos.com/')
+driver.get(url='https://search.brave.com/')
 
 # time.sleep(5)
-search_bar = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, '.search-input')))
+search_bar = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, '#searchbox')))
 search_bar.send_keys('stem', Keys.ENTER)
 
 # link = driver.find_element(By.CSS_SELECTOR, '.yuRUbf a')
-title = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, '.result-title a')))
+title = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, '.result-header')))
+
 
 print(title.get_attribute('href'))
 print(title.text)
