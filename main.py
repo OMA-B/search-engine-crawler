@@ -7,7 +7,7 @@ from crawler import run_crawler
 
 app = Flask('Search Engine Crawler')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://realstem_crawler:stemray$$$###@localhost/realstem_search_engine'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://realstem_crawler:password@localhost/db_name'
 CORS(app)
 db = SQLAlchemy(app)
 
